@@ -1,0 +1,79 @@
+@CHARSET "UTF-8";
+body{
+	font-weight: 400;
+}
+.alert {
+    transition: 1s linear all;
+     opacity: 1;
+}
+.alert.ng-hide {
+     opacity: 0;
+}
+
+.alert.ng-show {
+     opacity: 1;
+}
+
+.bs-docs-header {
+    box-sizing: border-box;
+    color: rgb(129, 181, 221);
+    height: 175px;
+    position: relative;
+    text-align: left;
+    text-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 0px;
+    perspective-origin: 950.5px 128px;
+    transform-origin: 950.5px 128px;
+    background-color: #C7EAEB;
+    border: 0px none rgb(205, 191, 227);
+    font: normal normal normal normal 24px/34.2857170104981px 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+    margin: 0px 0px 4px;
+    outline: rgb(205, 191, 227) none 0px;
+    padding: 0px 15px;
+}
+.second-header {
+    box-sizing: border-box;
+    height: 10px;
+    position: relative;
+    perspective-origin: 950.5px 128px;
+    transform-origin: 950.5px 128px;
+    background-color: #7AC5CC;
+    border: 0px none rgb(205, 191, 227);
+    margin: 0px 0px 6px;
+    outline: rgb(205, 191, 227) none 0px;
+    padding: 0px 6px;
+}
+.bs-docs-header .header{
+    background: url(../img/helpdesk.png) no-repeat left;
+    box-sizing: border-box;
+    margin-left:0px;
+    height: 141px;
+}
+.bs-docs-header h1 {
+    color: #253939;
+    height: 45px;
+    text-align: left;
+	text-shadow: 1px 1px 1px rgba(150, 150, 150, 0.64);
+    border: 0px none rgb(255, 255, 255);
+    font-size: normal normal 500 normal 60px/60px 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-variant: small-caps;
+    outline: rgb(255, 255, 255) none 0px;
+    padding-left :140px;
+    padding-top: 25px;
+}
+
+.bs-docs-header p{
+    color: #253939;
+    font-weight: 200;
+	font-size: 18px;
+	font-stretch: ultra-expanded;
+	text-shadow: 1px 1px 1px rgba(150, 150, 150, 0.24);
+	font-variant: small-caps;
+    padding-left :140px;
+}
+.navbar{
+	margin-bottom: 1px!important;
+	border-radius: 0px!important;
+}
+.td-center{
+	text-align: center;
+}

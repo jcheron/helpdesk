@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /helpdesk/
+
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{HTTP_ACCEPT} !(.*images.*)
+RewriteRule ^(.*)$ app/startup.php?c=$1 [L]
