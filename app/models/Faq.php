@@ -7,6 +7,7 @@ class Faq extends Base{
 	private $titre;
 	private $contenu;
 	private $dateCreation;
+	private $popularity;
 	/**
 	 * @ManyToOne
 	 * @JoinColumn(name="idCategorie",className="Categorie",nullable=true)
@@ -86,5 +87,15 @@ class Faq extends Base{
 	public function toString(){
 		return $this->titre." - ".$this->user;
 	}
+
+	public function getPopularity() {
+		return $this->popularity;
+	}
+
+	public function setPopularity($popularity) {
+		$this->popularity=$popularity;
+		return $this;
+	}
+
 
 }

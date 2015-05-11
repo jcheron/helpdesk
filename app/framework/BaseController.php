@@ -51,12 +51,23 @@ abstract class BaseController {
 		exit;
 	}
 
-	public function redirect($url){
-		global $config;
-		if(!StrUtils::startswith($url, $config["siteUrl"])){
-			$url=$config["siteUrl"].$url;
+	public function forward($controller,$action="index",$params=array(),$initialize=false,$finalize=false){
+		try{
+			$obj=new $controller();
+			if($initialize===true){
+				$obj->initialize();
+			}
+			if(method_exists($obj, $action)){
+				$obj->$action($params);
+			}else{
+				throw new Exception("La méthode `{$action}` n'existe pas sur le contrôleur `{$controller}`");
+			}
+			if($finalize===true){
+				$obj->finalize();
+			}
+		}catch(Exception $e){
+			echo $e->getMessage();
 		}
-		header("location : ".$url);
 	}
 }
 ?>

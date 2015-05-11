@@ -84,4 +84,8 @@ class Users extends \BaseController {
 		echo "</div>";
 		$this->loadView("main/vFooter");
 	}
+
+	public function tickets(){
+		$this->forward("tickets");
+	}
 }
