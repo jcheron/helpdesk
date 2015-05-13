@@ -23,7 +23,6 @@ class DefaultC extends \BaseController {
 	}
 
 	public function ckEditorSample(){
-		global $config;
 		$this->loadView("main/vHeader");
 		echo "<div class='container'>";
 		echo "<h1>Exemple ckEditor</h1>";
@@ -31,12 +30,5 @@ class DefaultC extends \BaseController {
 		echo JsUtils::execute("CKEDITOR.replace( 'editor1');");
 		echo "</div>";
 		$this->loadView("main/vFooter");
-	}
-
-	public function browse(){
-
-	}
-	public function upload(){
-
 	}
 }
