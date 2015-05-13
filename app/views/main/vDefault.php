@@ -17,4 +17,8 @@
 				<a class="btn btn-default" href="defaultc/asUser">Connexion en tant que user</a>
 				<a class="btn btn-warning" href="defaultc/disconnect">Déconnexion</a>
 		</fieldset>
+		<fieldset>
+			<legend>CkEditor</legend>
+				<a class="btn btn-link" href="defaultc/ckEditorSample">Exemple ckEditor</a>
+		</fieldset>
 	</div>

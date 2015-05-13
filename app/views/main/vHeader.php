@@ -5,6 +5,8 @@
 <title>Helpdesk</title>
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="assets/js/ckfinder/ckfinder.js"></script>
 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 </head>

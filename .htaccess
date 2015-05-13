@@ -1,6 +1,11 @@
-RewriteEngine On
-RewriteBase /helpdesk/
+AddDefaultCharset UTF-8
 
-RewriteCond %{REQUEST_FILENAME} !-f 
-RewriteCond %{HTTP_ACCEPT} !(.*images.*)
-RewriteRule ^(.*)$ app/startup.php?c=$1 [L]
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /helpdesk/
+	
+	RewriteCond %{REQUEST_FILENAME} !-f  
+	RewriteCond %{REQUEST_FILENAME} !-d 
+	RewriteCond %{HTTP_ACCEPT} !(.*images.*)
+	RewriteRule ^(.*)$ app/startup.php?c=$1 [L]
+</IfModule>
