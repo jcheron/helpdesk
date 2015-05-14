@@ -8,6 +8,7 @@ class Auth {
 	}
 
 	public function isAuth(){
+		return null!==self::getUser();
 	}
 
 	public static function isAdmin(){
