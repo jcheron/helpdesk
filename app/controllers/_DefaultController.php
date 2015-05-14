@@ -32,7 +32,7 @@ class _DefaultController extends \BaseController {
 	 * @see BaseController::initialize()
 	 */
 	public function initialize() {
-		$this->loadView("main/vHeader");
+		$this->loadView("main/vHeader",array("infoUser"=>Auth::getInfoUser()));
 		echo "<div class='container'>";
 		echo "<h1>".$this->title."</h1>";
 	}

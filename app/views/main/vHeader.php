@@ -45,6 +45,12 @@
 			<div class="header">
 				<h1>HelpDesk</h1>
 				<p>Assistance, support et gestion des incidents.</p>
+				<div class="pull-right">
+					<?php
+					echo $infoUser;
+					?>
+				</div>
+				<div class="clearfix"></div>
 			</div>
 		</div>
 	</div>
@@ -54,9 +60,4 @@
 			<li><a href="<?php echo $config["siteUrl"]?>"><span class="glyphicon glyphicon-home"
 					aria-hidden="true"></span>&nbsp;Accueil</a></li>
 		</ol>
-		<div class="label label-default pull-right">
-			<?php
-			echo(isset($_SESSION["user"])?$_SESSION["user"]:"Non connecté");
-			?>
-		</div>
 	</div>

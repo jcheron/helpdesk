@@ -1,5 +1,6 @@
 
 	<div class="container">
+	<div class="well well-lg">
 		<fieldset>
 			<legend>Données</legend>
 			<a class="btn btn-link" href="#">Accueil</a>
@@ -21,4 +22,5 @@
 			<legend>CkEditor</legend>
 				<a class="btn btn-link" href="defaultc/ckEditorSample">Exemple ckEditor</a>
 		</fieldset>
+		</div>
 	</div>
