@@ -81,10 +81,14 @@ class Gui{
 		}
 		foreach ($values as $v){
 			$selected="";
-			if($v->getId()===$value){
+			$id=$v;
+			if(is_object($v)===true){
+				$id=$v->getId();
+			}
+			if($id===$value){
 				$selected="selected";
 			}
-			$result.="<option ".$selected." class='element' id='element".$v->getId()."' value='".$v->getId()."'>".$v->toString()."</option>";
+			$result.="<option ".$selected." class='element' id='element".$id."' value='".$id."'>".$v."</option>";
 		}
 		return $result;
 	}

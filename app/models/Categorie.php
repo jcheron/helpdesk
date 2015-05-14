@@ -45,8 +45,8 @@ class Categorie extends Base{
 	public function toString(){
 		$parent="";
 		if(isset($this->categorie))
-			$parent=$this->categorie->toString();
-		return $this->libelle." (".$parent.")";
+			$parent=" (".$this->categorie.")";
+		return $this->libelle.$parent;
 	}
 
 	public function getCategories() {

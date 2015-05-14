@@ -7,6 +7,9 @@ class Auth {
 		return $user;
 	}
 
+	public function isAuth(){
+	}
+
 	public static function isAdmin(){
 		$user=self::getUser();
 		if($user instanceof User){

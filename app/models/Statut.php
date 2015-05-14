@@ -5,7 +5,7 @@ class Statut extends Base{
 	 */
 	private $id;
 	private $libelle;
-	private $ordre;
+	private $ordre=0;
 	private $icon;
 
 	public function getId() {

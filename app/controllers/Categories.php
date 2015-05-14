@@ -7,25 +7,26 @@ class Categories extends \_DefaultController {
 		$this->className="Categorie";
 	}
 
-	public function frm(){
+	public function frm($id=NULL){
+		$object=parent::frm($id);
 		$categories=DAO::getAll("Categorie");
-		$list=Gui::select($categories,-1,"Sélectionner une catégorie...");
-		$this->loadView("categorie/vAdd",array("select"=>$list));
+		$idParent=-1;
+		if(null!==$object->getCategorie()){
+			$idParent=$object->getCategorie()->getId();
+		}
+		$list=Gui::select($categories,$idParent,"Sélectionner une catégorie parente...");
+		$this->loadView("categorie/vAdd",array("select"=>$list,"categorie"=>$object));
 	}
 
-	public function add(){
-		$categorie=new Categorie();
-		RequestUtils::setValuesToObject($categorie,$_POST);
+	/* (non-PHPdoc)
+	 * @see _DefaultController::setValuesToObject()
+	 */
+	protected function setValuesToObject(&$object) {
+		parent::setValuesToObject($object);
 		if(isset($_POST["idCategorie"])){
 			$parent=DAO::getOne("Categorie", $_POST["idCategorie"]);
-			$categorie->setCategorie($parent);
+			$object->setCategorie($parent);
 		}
-	try{
-		DAO::insert($categorie);
-		$msg="Utilisateur `{$categorie->toString()}` ajoutée";
-		$this->loadView("main/vInfo",array("message"=>$msg,"href"=>"categories","type"=>"success"));
-	}catch(Exception $e){
-		$this->loadView("main/vInfo",array("message"=>"Impossible d'insérer la catégorie","href"=>"categories","type"=>"danger"));
-	}
+
 	}
 }
