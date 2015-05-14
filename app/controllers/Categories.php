@@ -2,13 +2,12 @@
 class Categories extends \_DefaultController {
 
 	public function Categories(){
-		$this->baseHref="categories";
 		$this->title="Catégories";
-		$this->className="Categorie";
+		$this->model="Categorie";
 	}
 
 	public function frm($id=NULL){
-		$object=parent::frm($id);
+		$object=$this->getInstance($id);
 		$categories=DAO::getAll("Categorie");
 		$idParent=-1;
 		if(null!==$object->getCategorie()){

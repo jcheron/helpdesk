@@ -1,9 +1,8 @@
 <?php
 class Tickets extends \_DefaultController {
 	public function Tickets(){
-		$this->baseHref="tickets";
 		$this->title="Tickets";
-		$this->className="Ticket";
+		$this->model="Ticket";
 	}
 
 	public function messages($id){
