@@ -7,7 +7,7 @@ class Auth {
 		return $user;
 	}
 
-	public function isAuth(){
+	public static function isAuth(){
 		return null!==self::getUser();
 	}
 
