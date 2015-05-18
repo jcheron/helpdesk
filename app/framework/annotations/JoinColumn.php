@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Annotation JoinColumn
+ * @author jc
+ * @version 1.0.0.1
+ * @package annotations
+ */
 class JoinColumn extends Column{
 	public $className;
 	public $name;

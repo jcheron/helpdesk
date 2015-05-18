@@ -2,7 +2,8 @@
 /**
  * Utilitaires liés aux chaînes
  * @author jc
- * version 1.0.0.1
+ * @version 1.0.0.1
+ * @package utils
  */
 class StrUtils {
 	public static function startswith($hay, $needle) {

@@ -1,5 +1,12 @@
 <?php
-/** @Target("class") */
+/**
+ * Annotation Table
+ * @author jc
+ * @version 1.0.0.1
+ * @package annotations
+ * @Target("class")
+ */
+
 class Table extends Annotation{
 	public $name;
 	public function checkConstraints($target){

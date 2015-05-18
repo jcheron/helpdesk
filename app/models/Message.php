@@ -1,4 +1,10 @@
 <?php
+/**
+ * Représente un message
+ * @author jcheron
+ * @version 1.1
+ * @package helpdesk.models
+ */
 class Message extends Base{
 	/**
 	 * @Id

@@ -1,9 +1,28 @@
 <?php
+/**
+ * Classe de base des contrôleurs Helpdesk
+ * @author jcheron
+ * @version 1.1
+ * @package helpdesk.controllers
+ */
 class _DefaultController extends \BaseController {
+	/**
+	 * @var string Classe du modèle associé
+	 */
 	protected $model;
+	/**
+	 * @var int durée en millisecondes d'affichage des messages d'information
+	 */
 	protected $messageTimerInterval=5000;
+	/**
+	 * @var string zone titre h1 de la page
+	 */
 	protected $title;
 
+	/**
+	 * Affiche la liste des instances de la class du modèle associé $model
+	 * @see BaseController::index()
+	 */
 	public function index($message=null){
 		global $config;
 		$baseHref=get_class($this);
@@ -30,6 +49,13 @@ class _DefaultController extends \BaseController {
 		echo "<a class='btn btn-primary' href='".$config["siteUrl"].$baseHref."/frm'>Ajouter...</a>";
 	}
 
+	/**
+	 * Retourne une instance de $className<br>
+	 * si $id est nul, un nouvel objet est retourné<br>
+	 * sinon l'objet retourné est celui chargé depuis la BDD à partir de l'id $id
+	 * @param string $id
+	 * @return multitype:$className
+	 */
 	public function getInstance($id=NULL){
 		if(isset($id) && sizeof($id)>0){
 			$object=DAO::getOne($this->model, $id[0]);
@@ -40,13 +66,32 @@ class _DefaultController extends \BaseController {
 		return $object;
 	}
 
+	/**
+	 * Affiche le formulaire d'ajout ou de modification d'une instance de $className<br>
+	 * L'instance est définie à partir de $id<br>
+	 * frm doit utiliser la méthode getInstance() pour obtenir l'instance à ajouter ou à modifier
+	 * @see _DefaultController::getInstance()
+	 * @param string $id
+	 */
 	public function frm($id=NULL){
 		echo "Non implémenté...";
 	}
 
+	/**
+	 * Affecte membre à membre les valeurs du tableau associatif $_POST aux membres de l'objet $object<br>
+	 * Prévoir une sur-définition de la méthode pour l'affectation des membres de type objet<br>
+	 * Cette méthode est utilisée update()
+	 * @see _DefaultController::update()
+	 * @param multitype:$className $object
+	 */
 	protected function setValuesToObject(&$object){
 		RequestUtils::setValuesToObject($object,$_POST);
 	}
+	/**
+	 * Met à jour à partir d'un post une instance de $className<br>
+	 * L'affectation des membres de l'objet par le contenu du POST se fait par appel de la méthode setValuesToObject()
+	 * @see _DefaultController::setValuesToObject()
+	 */
 	public function update(){
 		if(RequestUtils::isPost()){
 			$className=$this->model;
@@ -71,6 +116,10 @@ class _DefaultController extends \BaseController {
 		}
 	}
 
+	/**
+	 * Supprime l'instance dont l'id est $id dans la BDD
+	 * @param int $id
+	 */
 	public function delete($id){
 		try{
 			$object=DAO::getOne($this->model, $id[0]);
@@ -102,25 +151,60 @@ class _DefaultController extends \BaseController {
 		$this->loadView("main/vFooter");
 	}
 
+	/**
+	 * Affiche un message Alert bootstrap
+	 * @param DisplayedMessage $message
+	 */
 	public function _showDisplayedMessage($message){
 		$this->_showMessage($message->getContent(),$message->getType(),$message->getTimerInterval(),$message->getDismissable());
 	}
 
+	/**
+	 * Affiche un message Alert bootstrap
+	 * @param string $message texte du message
+	 * @param string $type type du message (info, success, warning ou danger)
+	 * @param number $timerInterval durée en millisecondes d'affichage du message (0 pour que le message reste affiché)
+	 * @param string $dismissable si vrai, l'alert dispose d'une croix de fermeture
+	 */
 	public function _showMessage($message,$type="success",$timerInterval=0,$dismissable=true){
 		$this->loadView("main/vInfo",array("message"=>$message,"type"=>$type,"dismissable"=>$dismissable,"timerInterval"=>$timerInterval));
 	}
 
+	/**
+	 * Affiche un message Alert bootstrap de type success
+	 * @param string $message texte du message
+	 * @param number $timerInterval durée en millisecondes d'affichage du message (0 pour que le message reste affiché)
+	 * @param string $dismissable si vrai, l'alert dispose d'une croix de fermeture
+	 */
 	public function messageSuccess($message,$timerInterval=0,$dismissable=true){
 		$this->_showMessage($message,"success",$timerInterval,$dismissable);
 	}
 
+	/**
+	 * Affiche un message Alert bootstrap de type warning
+	 * @param string $message texte du message
+	 * @param number $timerInterval durée en millisecondes d'affichage du message (0 pour que le message reste affiché)
+	 * @param string $dismissable si vrai, l'alert dispose d'une croix de fermeture
+	 */
 	public function messageWarning($message,$timerInterval=0,$dismissable=true){
 		$this->_showMessage($message,"warning",$timerInterval,$dismissable);
 	}
 
+	/**
+	 * Affiche un message Alert bootstrap de type danger
+	 * @param string $message texte du message
+	 * @param number $timerInterval durée en millisecondes d'affichage du message (0 pour que le message reste affiché)
+	 * @param string $dismissable si vrai, l'alert dispose d'une croix de fermeture
+	 */
 	public function messageDanger($message,$timerInterval=0,$dismissable=true){
 		$this->_showMessage($message,"danger",$timerInterval,$dismissable);
 	}
+	/**
+	 * Affiche un message Alert bootstrap de type info
+	 * @param string $message texte du message
+	 * @param number $timerInterval durée en millisecondes d'affichage du message (0 pour que le message reste affiché)
+	 * @param string $dismissable si vrai, l'alert dispose d'une croix de fermeture
+	 */
 	public function messageInfo($message,$timerInterval=0,$dismissable=true){
 		$this->_showMessage($message,"info",$timerInterval,$dismissable);
 	}

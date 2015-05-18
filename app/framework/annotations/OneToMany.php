@@ -1,5 +1,11 @@
 <?php
-/** @Target("property") */
+/**
+ * Annotation OneToMany
+ * @author jc
+ * @version 1.0.0.1
+ * @package annotations
+ * @Target("property")
+ */
 class OneToMany extends Annotation{
 	public $mappedBy;
 	public $fetch;

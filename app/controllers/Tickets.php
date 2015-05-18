@@ -1,6 +1,13 @@
 <?php
+/**
+ * Gestion des tickets
+ * @author jcheron
+ * @version 1.1
+ * @package helpdesk.controllers
+ */
 class Tickets extends \_DefaultController {
 	public function Tickets(){
+		parent::__construct();
 		$this->title="Tickets";
 		$this->model="Ticket";
 	}
@@ -25,4 +32,6 @@ class Tickets extends \_DefaultController {
 				})");
 		}
 	}
+
+
 }

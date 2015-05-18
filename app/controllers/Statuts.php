@@ -1,7 +1,14 @@
 <?php
+/**
+ * Gestion des statuts
+ * @author jcheron
+ * @version 1.1
+ * @package helpdesk.controllers
+ */
 class Statuts extends \_DefaultController {
 
 	public function Statuts(){
+		parent::__construct();
 		$this->title="Statuts";
 		$this->model="Statut";
 	}

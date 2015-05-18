@@ -2,7 +2,8 @@
 /**
  * Utilitaires liés à la session
  * @author jc
- * version 1.0.0.1
+ * @version 1.0.0.1
+ * @package utils
  */
 class SessionUtils{
 	

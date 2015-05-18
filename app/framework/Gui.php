@@ -2,6 +2,7 @@
 /**
  * Classe technique destinée à la conception des interfaces
  * @author jc
+ * @package views
  *
  */
 class Gui{
@@ -47,6 +48,11 @@ class Gui{
 		echo Gui::getOne($value,$method);
 	}
 
+	/**
+	 * Retourne un objet $value en lui ayant au préalable appliqué la méthode $method
+	 * @param Object $value
+	 * @param string $method Méthode de la classe GUI ou de la classe de $value
+	 */
 	public static function getOne($value,$method='toString'){
 		if(method_exists("GUI", $method)){
 			$value=GUI::$method($value);

@@ -1,7 +1,14 @@
 <?php
+/**
+ * Gestion des users
+ * @author jcheron
+ * @version 1.1
+ * @package helpdesk.controllers
+ */
 class Users extends \_DefaultController {
 
 	public function Users(){
+		parent::__construct();
 		$this->title="Utilisateurs";
 		$this->model="User";
 	}

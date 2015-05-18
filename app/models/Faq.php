@@ -1,4 +1,10 @@
 <?php
+/**
+ * Représente un article de la Faq
+ * @author jcheron
+ * @version 1.1
+ * @package helpdesk.models
+ */
 class Faq extends Base{
 	/**
 	 * @Id

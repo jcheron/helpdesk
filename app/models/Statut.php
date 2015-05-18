@@ -1,4 +1,10 @@
 <?php
+/**
+ * Représente un statut
+ * @author jcheron
+ * @version 1.1
+ * @package helpdesk.models
+ */
 class Statut extends Base{
 	/**
 	 * @Id

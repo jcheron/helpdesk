@@ -1,4 +1,10 @@
 <?php
+/**
+ * Représente une catégorie
+ * @author jcheron
+ * @version 1.1
+ * @package helpdesk.models
+ */
 class Categorie extends Base{
 	/**
 	 * @Id

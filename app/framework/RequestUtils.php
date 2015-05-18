@@ -3,7 +3,8 @@
 /**
  * Utilitaires liés à la requête $_POST ou $_GET
  * @author jc
- * version 1.0.0.1
+ * @version 1.0.0.1
+ * @package utils
  */
 class RequestUtils{
 	/**

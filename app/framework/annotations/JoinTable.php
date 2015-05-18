@@ -1,6 +1,11 @@
 <?php
-
-/** @Target("property") */
+/**
+ * Annotation JoinTable
+ * @author jc
+ * @version 1.0.0.1
+ * @package annotations
+ * @Target("property")
+ */
 class JoinTable extends Annotation{
 	public $name;
 	public $joinColumns;

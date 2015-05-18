@@ -3,7 +3,8 @@
 /**
  * Utilitaires d'insertion de scripts côté client (JQuery)
  * @author jc
- * version 1.0.0.3
+ * @version 1.0.0.3
+ * @package javascript
  */
 class JsUtils {
 

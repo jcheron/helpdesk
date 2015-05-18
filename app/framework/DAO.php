@@ -8,6 +8,7 @@ require_once 'framework/SqlUtils.php';
  * Classe passerelle entre base de données et modèle objet
  * @author jc
  * @version 1.0.0.4
+ * @package models
  */
 class DAO {
 	public static $db;
@@ -363,6 +364,14 @@ class DAO {
 		return $result;
 	}
 
+	/**
+	 * Réalise la connexion à la base de données en utilisant les paramètres passés
+	 * @param string $dbName
+	 * @param string $serverName
+	 * @param string $port
+	 * @param string $user
+	 * @param string $password
+	 */
 	public static function connect($dbName,$serverName="127.0.0.1",$port="3306",$user="root",$password=""){
 		DAO::$db=new Database($dbName,$serverName,$port,$user,$password);
 		DAO::$db->connect();

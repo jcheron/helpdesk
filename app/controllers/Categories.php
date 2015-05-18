@@ -1,7 +1,14 @@
 <?php
+/**
+ * Gestion des catégories
+ * @author jcheron
+ * @version 1.1
+ * @package helpdesk.controllers
+ */
 class Categories extends \_DefaultController {
 
 	public function Categories(){
+		parent::__construct();
 		$this->title="Catégories";
 		$this->model="Categorie";
 	}

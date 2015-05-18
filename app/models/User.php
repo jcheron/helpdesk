@@ -1,4 +1,10 @@
 <?php
+/**
+ * Représente un utilisateur
+ * @author jcheron
+ * @version 1.1
+ * @package helpdesk.models
+ */
 class User extends Base{
 	/**
 	 * @Id

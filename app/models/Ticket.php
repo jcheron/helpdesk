@@ -1,4 +1,10 @@
 <?php
+/**
+ * Représente un ticket
+ * @author jcheron
+ * @version 1.1
+ * @package helpdesk.models
+ */
 class Ticket extends Base{
 	/**
 	 * @Id
@@ -115,7 +121,13 @@ class Ticket extends Base{
 	}
 
 	public function toString(){
-		return $this->titre." - ".$this->categorie." (".$this->statut->toString().")";
+		$cat="";
+		if($this->categorie!==null)
+			$cat=$this->categorie;
+		$stat="";
+		if($this->statut!==null)
+			$stat=$this->statut;
+		return $this->titre." - ".$cat." (".$stat.")";
 	}
 
 	public function getMessages() {

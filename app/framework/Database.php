@@ -4,6 +4,7 @@
  * Classe d'accès aux Bases de données encapsulant un objet PDO
  * @author heron
  * @version 1.0.0.2
+ * @package database
  *
  */
 class Database {

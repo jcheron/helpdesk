@@ -14,7 +14,8 @@ require_once 'framework/OrmUtils.php';
 /**
  * Utilitaires de Reflexion
  * @author jc
- * version 1.0.0.1
+ * @version 1.0.0.1
+ * @package orm
  */
 class Reflexion{
 	public static function getProperties($instance){
