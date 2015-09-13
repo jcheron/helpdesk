@@ -127,7 +127,7 @@ class Ticket extends Base{
 		$stat="";
 		if($this->statut!==null)
 			$stat=$this->statut;
-		return $this->titre." - ".$cat." (".$stat.")";
+		return $this->titre." - ".$cat." - ".$stat;
 	}
 
 	public function getMessages() {

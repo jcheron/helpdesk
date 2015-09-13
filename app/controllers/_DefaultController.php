@@ -1,11 +1,14 @@
 <?php
+use micro\orm\DAO;
+use micro\utils\RequestUtils;
+use micro\controllers\BaseController;
 /**
  * Classe de base des contrôleurs Helpdesk
  * @author jcheron
  * @version 1.1
  * @package helpdesk.controllers
  */
-class _DefaultController extends \BaseController {
+class _DefaultController extends BaseController {
 	/**
 	 * @var string Classe du modèle associé
 	 */
@@ -138,17 +141,21 @@ class _DefaultController extends \BaseController {
 	 * @see BaseController::initialize()
 	 */
 	public function initialize() {
-		$this->loadView("main/vHeader",array("infoUser"=>Auth::getInfoUser()));
-		echo "<div class='container'>";
-		echo "<h1>".$this->title."</h1>";
+		if(!RequestUtils::isAjax()){
+			$this->loadView("main/vHeader",array("infoUser"=>Auth::getInfoUser()));
+			echo "<div class='container'>";
+			echo "<h1>".$this->title."</h1>";
+		}
 	}
 
 	/* (non-PHPdoc)
 	 * @see BaseController::finalize()
 	 */
 	public function finalize() {
-		echo "</div>";
-		$this->loadView("main/vFooter");
+		if(!RequestUtils::isAjax()){
+			echo "</div>";
+			$this->loadView("main/vFooter");
+		}
 	}
 
 	/**
@@ -166,8 +173,8 @@ class _DefaultController extends \BaseController {
 	 * @param number $timerInterval durée en millisecondes d'affichage du message (0 pour que le message reste affiché)
 	 * @param string $dismissable si vrai, l'alert dispose d'une croix de fermeture
 	 */
-	public function _showMessage($message,$type="success",$timerInterval=0,$dismissable=true){
-		$this->loadView("main/vInfo",array("message"=>$message,"type"=>$type,"dismissable"=>$dismissable,"timerInterval"=>$timerInterval));
+	public function _showMessage($message,$type="success",$timerInterval=0,$dismissable=true,$visible=true){
+		$this->loadView("main/vInfo",array("message"=>$message,"type"=>$type,"dismissable"=>$dismissable,"timerInterval"=>$timerInterval,"visible"=>$visible));
 	}
 
 	/**

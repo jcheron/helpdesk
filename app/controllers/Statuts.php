@@ -1,4 +1,5 @@
 <?php
+use micro\views\Gui;
 /**
  * Gestion des statuts
  * @author jcheron

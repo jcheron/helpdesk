@@ -1,31 +1,23 @@
 <?php
+use micro\orm\DAO;
+use micro\utils\StrUtils;
+use micro\controllers\Autoloader;
 error_reporting(E_ALL);
 $config=include_once 'config.php';
-$GLOBALS["siteUrl"]="/helpdesk/";
-$GLOBALS["documentRoot"]="Test";
 ?>
 
 <?php
-require_once 'framework/log/Logger.php';
+define('DS', DIRECTORY_SEPARATOR);
+define('ROOT', dirname(__FILE__).DS);
+
+require_once 'micro/log/Logger.php';
+require_once'micro/controllers/Autoloader.php';
+
+Autoloader::register();
 
 $ctrl=new Startup();
 $ctrl->run();
 
-function __autoload($myClass){
-	global $config;
-	if(file_exists("controllers/".$myClass.".php"))
-		require_once("controllers/".$myClass.".php");
-	else if(file_exists("models/".$myClass.".php"))
-		require_once("models/".$myClass.".php");
-	else if(file_exists("framework/".$myClass.".php"))
-		require_once("framework/".$myClass.".php");
-	else{
-		foreach ($config["directories"] as $directory){
-			if(file_exists($directory."/".$myClass.".php"))
-				require_once($directory."/".$myClass.".php");
-		}
-	}
-}
 class Startup{
 	private $urlParts;
 	public function run(){
@@ -33,7 +25,8 @@ class Startup{
 		session_start();
 		Logger::init();
 		extract($config["database"]);
-		DAO::connect($dbName,@$serverName,@$port,@$user,@$password);
+		$db=$config["database"];
+		DAO::connect($db["dbName"],@$db["serverName"],@$db["port"],@$db["user"],@$db["password"]);
 		$url=$_GET["c"];
 
 		if(!$url){

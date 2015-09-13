@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class DisplayedMessage | Micro-Framework &amp; HelpDesk</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
+
+</head>
+
+<body>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">Micro-Framework &amp; HelpDesk</a>
+			</div>
+			<div class="collapse navbar-collapse">
+
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="namespace-None.html" title="Summary of None"><span>Namespace</span></a>
+					</li>
+					<li class="active">
+<span>Class</span>					</li>
+
+
+
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li>
+						<a href="namespace-micro.html">
+							micro<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-micro.annotations.html">
+							annotations						</a>
+							</li>
+					<li>
+						<a href="namespace-micro.controllers.html">
+							controllers						</a>
+							</li>
+					<li>
+						<a href="namespace-micro.db.html">
+							db						</a>
+							</li>
+					<li>
+						<a href="namespace-micro.js.html">
+							js						</a>
+							</li>
+					<li>
+						<a href="namespace-micro.orm.html">
+							orm						</a>
+							</li>
+					<li>
+						<a href="namespace-micro.utils.html">
+							utils						</a>
+							</li>
+								</ul></li>
+					<li class="active">
+						<a href="namespace-None.html">
+							None						</a>
+							</li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-_DefaultController.html">_DefaultController</a></li>
+				<li><a href="class-Auth.html">Auth</a></li>
+				<li><a href="class-Base.html">Base</a></li>
+				<li><a href="class-Categorie.html">Categorie</a></li>
+				<li><a href="class-Categories.html">Categories</a></li>
+				<li><a href="class-Column.html">Column</a></li>
+				<li><a href="class-DefaultC.html">DefaultC</a></li>
+				<li class="active"><a href="class-DisplayedMessage.html">DisplayedMessage</a></li>
+				<li><a href="class-Faq.html">Faq</a></li>
+				<li><a href="class-Faqs.html">Faqs</a></li>
+				<li><a href="class-Id.html">Id</a></li>
+				<li><a href="class-JoinColumn.html">JoinColumn</a></li>
+				<li><a href="class-JoinTable.html">JoinTable</a></li>
+				<li><a href="class-ManyToMany.html">ManyToMany</a></li>
+				<li><a href="class-ManyToOne.html">ManyToOne</a></li>
+				<li><a href="class-Message.html">Message</a></li>
+				<li><a href="class-Messages.html">Messages</a></li>
+				<li><a href="class-OneToMany.html">OneToMany</a></li>
+				<li><a href="class-Sample.html">Sample</a></li>
+				<li><a href="class-Statut.html">Statut</a></li>
+				<li><a href="class-Statuts.html">Statuts</a></li>
+				<li><a href="class-Table.html">Table</a></li>
+				<li><a href="class-Ticket.html">Ticket</a></li>
+				<li><a href="class-Tickets.html">Tickets</a></li>
+				<li><a href="class-Transient.html">Transient</a></li>
+				<li><a href="class-User.html">User</a></li>
+				<li><a href="class-Users.html">Users</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class DisplayedMessage</h1>
+
+
+	<div class="description">
+	<p>Représente un message à afficher dans une alert Bootstrap</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		
+		<b>Package:</b> helpdesk\my<br>
+
+				<b>Author:</b>
+				jcheron<br>
+				<b>Version:</b>
+				1.1<br>
+			<b>Located at</b> <a href="source-class-DisplayedMessage.html#2-58" title="Go to source code">my/DisplayedMessage.php</a>
+		<br>
+	</div>
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Methods summary</h2></div>
+			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="DisplayedMessage" id="_DisplayedMessage">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_DisplayedMessage">#</a>
+			<code><a href="source-class-DisplayedMessage.html#14-19" title="Go to source code">DisplayedMessage</a>( <span> <var>$content</var></span>, <span> <var>$type</var> = <span class="php-quote">&quot;success&quot;</span></span>, <span> <var>$timerInterval</var> = <span class="php-num">0</span></span>, <span> <var>$dismissable</var> = <span class="php-keyword1">true</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getContent" id="_getContent">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getContent">#</a>
+			<code><a href="source-class-DisplayedMessage.html#21-23" title="Go to source code">getContent</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setContent" id="_setContent">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setContent">#</a>
+			<code><a href="source-class-DisplayedMessage.html#25-28" title="Go to source code">setContent</a>( <span> <var>$content</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getType" id="_getType">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getType">#</a>
+			<code><a href="source-class-DisplayedMessage.html#30-32" title="Go to source code">getType</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setType" id="_setType">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setType">#</a>
+			<code><a href="source-class-DisplayedMessage.html#34-37" title="Go to source code">setType</a>( <span> <var>$type</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getTimerInterval" id="_getTimerInterval">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getTimerInterval">#</a>
+			<code><a href="source-class-DisplayedMessage.html#39-41" title="Go to source code">getTimerInterval</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setTimerInterval" id="_setTimerInterval">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setTimerInterval">#</a>
+			<code><a href="source-class-DisplayedMessage.html#43-46" title="Go to source code">setTimerInterval</a>( <span> <var>$timerInterval</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getDismissable" id="_getDismissable">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getDismissable">#</a>
+			<code><a href="source-class-DisplayedMessage.html#48-50" title="Go to source code">getDismissable</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setDismissable" id="_setDismissable">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setDismissable">#</a>
+			<code><a href="source-class-DisplayedMessage.html#52-55" title="Go to source code">setDismissable</a>( <span> <var>$dismissable</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Micro-Framework &amp; HelpDesk API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

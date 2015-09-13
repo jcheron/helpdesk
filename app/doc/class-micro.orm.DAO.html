@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class micro\orm\DAO | Micro-Framework &amp; HelpDesk</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
+
+</head>
+
+<body>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">Micro-Framework &amp; HelpDesk</a>
+			</div>
+			<div class="collapse navbar-collapse">
+
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="namespace-micro.orm.html" title="Summary of micro\orm"><span>Namespace</span></a>
+					</li>
+					<li class="active">
+<span>Class</span>					</li>
+
+
+
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-micro.html">
+							micro<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-micro.annotations.html">
+							annotations						</a>
+							</li>
+					<li>
+						<a href="namespace-micro.controllers.html">
+							controllers						</a>
+							</li>
+					<li>
+						<a href="namespace-micro.db.html">
+							db						</a>
+							</li>
+					<li>
+						<a href="namespace-micro.js.html">
+							js						</a>
+							</li>
+					<li class="active">
+						<a href="namespace-micro.orm.html">
+							orm						</a>
+							</li>
+					<li>
+						<a href="namespace-micro.utils.html">
+							utils						</a>
+							</li>
+								</ul></li>
+					<li>
+						<a href="namespace-None.html">
+							None						</a>
+							</li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-micro.orm.DAO.html">DAO</a></li>
+				<li><a href="class-micro.orm.OrmUtils.html">OrmUtils</a></li>
+				<li><a href="class-micro.orm.Reflexion.html">Reflexion</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class DAO</h1>
+
+
+	<div class="description">
+	<p>Classe passerelle entre base de données et modèle objet</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-micro.html">micro</a>\<a href="namespace-micro.orm.html">orm</a><br>
+		<b>Package:</b> orm<br>
+
+				<b>Author:</b>
+				jc<br>
+				<b>Version:</b>
+				1.0.0.4<br>
+			<b>Located at</b> <a href="source-class-micro.orm.DAO.html#11-386" title="Go to source code">micro/orm/DAO.php</a>
+		<br>
+	</div>
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Methods summary</h2></div>
+			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="getOneToMany" id="_getOneToMany">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getOneToMany">#</a>
+			<code><a href="source-class-micro.orm.DAO.html#95-133" title="Go to source code">getOneToMany</a>( <span>Classe <var>$instance</var></span>, <span>string <var>$member</var></span>, <span>array <var>$array</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Affecte/charge les enregistrements fils dans le membre $member de $instance.
+Si $array est null, les fils sont chargés depuis la base de données</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Affecte/charge les enregistrements fils dans le membre $member de $instance.
+Si $array est null, les fils sont chargés depuis la base de données</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$instance</var></dt>
+						<dd></dd>
+						<dt><var>$member</var></dt>
+						<dd>Membre sur lequel doit être présent une annotation OneToMany</dd>
+						<dt><var>$array</var></dt>
+						<dd>paramètre facultatif contenant la liste des fils possibles</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getManyToMany" id="_getManyToMany">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getManyToMany">#</a>
+			<code><a href="source-class-micro.orm.DAO.html#140-198" title="Go to source code">getManyToMany</a>( <span>Classe <var>$instance</var></span>, <span>string <var>$member</var></span>, <span>array <var>$array</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Affecte/charge les enregistrements fils dans le membre $member de $instance.
+Si $array est null, les fils sont chargés depuis la base de données</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Affecte/charge les enregistrements fils dans le membre $member de $instance.
+Si $array est null, les fils sont chargés depuis la base de données</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$instance</var></dt>
+						<dd></dd>
+						<dt><var>$member</var></dt>
+						<dd>Membre sur lequel doit être présent une annotation OneToMany</dd>
+						<dt><var>$array</var></dt>
+						<dd>paramètre facultatif contenant la liste des fils possibles</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getAll" id="_getAll">
+
+			<td class="attributes"><code>
+				 public static
+				multitype:$className
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getAll">#</a>
+			<code><a href="source-class-micro.orm.DAO.html#199-232" title="Go to source code">getAll</a>( <span>string <var>$className</var></span>, <span>string <var>$condition</var> = <span class="php-quote">''</span></span>, <span> <var>$loadManyToOne</var> = <span class="php-keyword1">true</span></span> )</code>
+
+			<div class="description short">
+				<p>Retourne un tableau d'objets de $className depuis la base de données</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Retourne un tableau d'objets de $className depuis la base de données</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$className</var></dt>
+						<dd>nom de la classe du model à charger</dd>
+						<dt><var>$condition</var></dt>
+						<dd>Partie suivant le WHERE d'une instruction SQL</dd>
+						<dt><var>$loadManyToOne</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						multitype:$className<br>$className
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getOne" id="_getOne">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getOne">#</a>
+			<code><a href="source-class-micro.orm.DAO.html#235-258" title="Go to source code">getOne</a>( <span>String <var>$className</var></span>, <span>Array,string <var>$keyValues</var></span>, <span> <var>$loadManyToOne</var> = <span class="php-keyword1">true</span></span> )</code>
+
+			<div class="description short">
+				<p>Retourne une instance de $className depuis la base de données, à  partir des valeurs $keyValues de la clé primaire</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Retourne une instance de $className depuis la base de données, à  partir des valeurs $keyValues de la clé primaire</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$className</var></dt>
+						<dd>nom de la classe du model à charger</dd>
+						<dt><var>$keyValues</var></dt>
+						<dd>valeurs des clés primaires ou condition</dd>
+						<dt><var>$loadManyToOne</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="delete" id="_delete">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_delete">#</a>
+			<code><a href="source-class-micro.orm.DAO.html#260-274" title="Go to source code">delete</a>( <span>Classe <var>$instance</var></span> )</code>
+
+			<div class="description short">
+				<p>Supprime $instance dans la base de données</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Supprime $instance dans la base de données</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$instance</var></dt>
+						<dd>instance à supprimer</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="insert" id="_insert">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_insert">#</a>
+			<code><a href="source-class-micro.orm.DAO.html#276-301" title="Go to source code">insert</a>( <span>Classe <var>$instance</var></span>, <span> <var>$insertMany</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				<p>Insère $instance dans la base de données</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Insère $instance dans la base de données</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$instance</var></dt>
+						<dd>instance à insérer</dd>
+						<dt><var>$insertMany</var></dt>
+						<dd>vrai, sauvegarde des instances reliées à $instance par un ManyToMany</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="insertOrUpdateAllManyToMany" id="_insertOrUpdateAllManyToMany">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_insertOrUpdateAllManyToMany">#</a>
+			<code><a href="source-class-micro.orm.DAO.html#303-312" title="Go to source code">insertOrUpdateAllManyToMany</a>( <span>Object <var>$instance</var></span> )</code>
+
+			<div class="description short">
+				<p>Met à jour les membres de $instance annotés par un ManyToMany</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Met à jour les membres de $instance annotés par un ManyToMany</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$instance</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="insertOrUpdateManyToMany" id="_insertOrUpdateManyToMany">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_insertOrUpdateManyToMany">#</a>
+			<code><a href="source-class-micro.orm.DAO.html#314-349" title="Go to source code">insertOrUpdateManyToMany</a>( <span>Object <var>$instance</var></span>, <span>String <var>$member</var></span> )</code>
+
+			<div class="description short">
+				<p>Met à jour le membre $member de $instance annoté par un ManyToMany</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Met à jour le membre $member de $instance annoté par un ManyToMany</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$instance</var></dt>
+						<dd></dd>
+						<dt><var>$member</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="update" id="_update">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_update">#</a>
+			<code><a href="source-class-micro.orm.DAO.html#350-372" title="Go to source code">update</a>( <span>Classe <var>$instance</var></span>, <span> <var>$updateMany</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				<p>Met à jour $instance dans la base de données.
+Attention de ne pas modifier la clé primaire</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Met à jour $instance dans la base de données.
+Attention de ne pas modifier la clé primaire</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$instance</var></dt>
+						<dd>instance à modifier</dd>
+						<dt><var>$updateMany</var></dt>
+						<dd>ou met à jour les membres ManyToMany</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="connect" id="_connect">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_connect">#</a>
+			<code><a href="source-class-micro.orm.DAO.html#374-385" title="Go to source code">connect</a>( <span>string <var>$dbName</var></span>, <span>string <var>$serverName</var> = <span class="php-quote">&quot;127.0.0.1&quot;</span></span>, <span>string <var>$port</var> = <span class="php-quote">&quot;3306&quot;</span></span>, <span>string <var>$user</var> = <span class="php-quote">&quot;root&quot;</span></span>, <span>string <var>$password</var> = <span class="php-quote">&quot;&quot;</span></span> )</code>
+
+			<div class="description short">
+				<p>Réalise la connexion à la base de données en utilisant les paramètres passés</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Réalise la connexion à la base de données en utilisant les paramètres passés</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$dbName</var></dt>
+						<dd></dd>
+						<dt><var>$serverName</var></dt>
+						<dd></dd>
+						<dt><var>$port</var></dt>
+						<dd></dd>
+						<dt><var>$user</var></dt>
+						<dd></dd>
+						<dt><var>$password</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+		<div class="panel panel-default">
+            <div class="panel-heading"><h2>Properties summary</h2></div>
+			<table class="summary table table-bordered table-striped properties" id="properties">
+		<tr data-order="db" id="$db">
+			<td class="attributes"><code>
+				public static 
+				
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-micro.orm.DAO.html#18" title="Go to source code"><var>$db</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$db" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Micro-Framework &amp; HelpDesk API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

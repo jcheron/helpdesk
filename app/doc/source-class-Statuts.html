@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex">
+
+	<title>File controllers/Statuts.php | Micro-Framework &amp; HelpDesk</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
+
+</head>
+
+<body>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">Micro-Framework &amp; HelpDesk</a>
+			</div>
+			<div class="collapse navbar-collapse">
+
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li>
+<span>Namespace</span>					</li>
+					<li>
+<span>Class</span>					</li>
+
+
+
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li>
+						<a href="namespace-micro.html">
+							micro<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-micro.annotations.html">
+							annotations						</a>
+							</li>
+					<li>
+						<a href="namespace-micro.controllers.html">
+							controllers						</a>
+							</li>
+					<li>
+						<a href="namespace-micro.db.html">
+							db						</a>
+							</li>
+					<li>
+						<a href="namespace-micro.js.html">
+							js						</a>
+							</li>
+					<li>
+						<a href="namespace-micro.orm.html">
+							orm						</a>
+							</li>
+					<li>
+						<a href="namespace-micro.utils.html">
+							utils						</a>
+							</li>
+								</ul></li>
+					<li>
+						<a href="namespace-None.html">
+							None						</a>
+							</li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-_DefaultController.html">_DefaultController</a></li>
+				<li><a href="class-Auth.html">Auth</a></li>
+				<li><a href="class-Base.html">Base</a></li>
+				<li><a href="class-Categorie.html">Categorie</a></li>
+				<li><a href="class-Categories.html">Categories</a></li>
+				<li><a href="class-Column.html">Column</a></li>
+				<li><a href="class-DefaultC.html">DefaultC</a></li>
+				<li><a href="class-DisplayedMessage.html">DisplayedMessage</a></li>
+				<li><a href="class-Faq.html">Faq</a></li>
+				<li><a href="class-Faqs.html">Faqs</a></li>
+				<li><a href="class-Id.html">Id</a></li>
+				<li><a href="class-JoinColumn.html">JoinColumn</a></li>
+				<li><a href="class-JoinTable.html">JoinTable</a></li>
+				<li><a href="class-ManyToMany.html">ManyToMany</a></li>
+				<li><a href="class-ManyToOne.html">ManyToOne</a></li>
+				<li><a href="class-Message.html">Message</a></li>
+				<li><a href="class-Messages.html">Messages</a></li>
+				<li><a href="class-micro.annotations.ManyToManyParser.html">micro\annotations\ManyToManyParser</a></li>
+				<li><a href="class-micro.controllers.Autoloader.html">micro\controllers\Autoloader</a></li>
+				<li><a href="class-micro.controllers.BaseController.html">micro\controllers\BaseController</a></li>
+				<li><a href="class-micro.db.Database.html">micro\db\Database</a></li>
+				<li><a href="class-micro.db.SqlUtils.html">micro\db\SqlUtils</a></li>
+				<li><a href="class-micro.js.Jquery.html">micro\js\Jquery</a></li>
+				<li><a href="class-micro.js.JsCode.html">micro\js\JsCode</a></li>
+				<li><a href="class-micro.orm.DAO.html">micro\orm\DAO</a></li>
+				<li><a href="class-micro.orm.OrmUtils.html">micro\orm\OrmUtils</a></li>
+				<li><a href="class-micro.orm.Reflexion.html">micro\orm\Reflexion</a></li>
+				<li><a href="class-micro.utils.RequestUtils.html">micro\utils\RequestUtils</a></li>
+				<li><a href="class-micro.utils.SessionUtils.html">micro\utils\SessionUtils</a></li>
+				<li><a href="class-micro.utils.StrUtils.html">micro\utils\StrUtils</a></li>
+				<li><a href="class-OneToMany.html">OneToMany</a></li>
+				<li><a href="class-Sample.html">Sample</a></li>
+				<li><a href="class-Statut.html">Statut</a></li>
+				<li><a href="class-Statuts.html">Statuts</a></li>
+				<li><a href="class-Table.html">Table</a></li>
+				<li><a href="class-Ticket.html">Ticket</a></li>
+				<li><a href="class-Tickets.html">Tickets</a></li>
+				<li><a href="class-Transient.html">Transient</a></li>
+				<li><a href="class-User.html">User</a></li>
+				<li><a href="class-Users.html">Users</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<pre id="source"><code><span id="1" class="l"><a href="#1"> 1 </a><span class="xlang">&lt;?php</span>
+</span><span id="2" class="l"><a href="#2"> 2 </a><span class="php-keyword1">use</span> micro\views\Gui;
+</span><span id="3" class="l"><a href="#3"> 3 </a><span class="php-comment">/**
+</span></span><span id="4" class="l"><a href="#4"> 4 </a><span class="php-comment"> * Gestion des statuts
+</span></span><span id="5" class="l"><a href="#5"> 5 </a><span class="php-comment"> * @author jcheron
+</span></span><span id="6" class="l"><a href="#6"> 6 </a><span class="php-comment"> * @version 1.1
+</span></span><span id="7" class="l"><a href="#7"> 7 </a><span class="php-comment"> * @package helpdesk.controllers
+</span></span><span id="8" class="l"><a href="#8"> 8 </a><span class="php-comment"> */</span>
+</span><span id="9" class="l"><a href="#9"> 9 </a><span class="php-keyword1">class</span> Statuts <span class="php-keyword1">extends</span> \_DefaultController {
+</span><span id="10" class="l"><a href="#10">10 </a>
+</span><span id="11" class="l"><a href="#11">11 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> Statuts(){
+</span><span id="12" class="l"><a href="#12">12 </a>        parent::__construct();
+</span><span id="13" class="l"><a href="#13">13 </a>        <span class="php-var">$this</span>-&gt;title=<span class="php-quote">&quot;Statuts&quot;</span>;
+</span><span id="14" class="l"><a href="#14">14 </a>        <span class="php-var">$this</span>-&gt;model=<span class="php-quote">&quot;Statut&quot;</span>;
+</span><span id="15" class="l"><a href="#15">15 </a>    }
+</span><span id="16" class="l"><a href="#16">16 </a>
+</span><span id="17" class="l"><a href="#17">17 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> frm(<span class="php-var">$id</span>=<span class="php-keyword1">NULL</span>){
+</span><span id="18" class="l"><a href="#18">18 </a>        <span class="php-var">$object</span>=<span class="php-var">$this</span>-&gt;getInstance(<span class="php-var">$id</span>);
+</span><span id="19" class="l"><a href="#19">19 </a>        <span class="php-var">$icons</span>=<span class="php-keyword1">array</span> (<span class="php-quote">&quot;asterisk&quot;</span>,<span class="php-quote">&quot;plus&quot;</span>,<span class="php-quote">&quot;euro&quot;</span>,<span class="php-quote">&quot;eur&quot;</span>,<span class="php-quote">&quot;minus&quot;</span>,<span class="php-quote">&quot;cloud&quot;</span>,<span class="php-quote">&quot;envelope&quot;</span>,<span class="php-quote">&quot;pencil&quot;</span>,<span class="php-quote">&quot;glass&quot;</span>,<span class="php-quote">&quot;music&quot;</span>,<span class="php-quote">&quot;search&quot;</span>,<span class="php-quote">&quot;heart&quot;</span>,<span class="php-quote">&quot;star&quot;</span>,<span class="php-quote">&quot;star-empty&quot;</span>,<span class="php-quote">&quot;user&quot;</span>,<span class="php-quote">&quot;film&quot;</span>,<span class="php-quote">&quot;th-large&quot;</span>,<span class="php-quote">&quot;th&quot;</span>,<span class="php-quote">&quot;th-list&quot;</span>,<span class="php-quote">&quot;ok&quot;</span>,<span class="php-quote">&quot;remove&quot;</span>,<span class="php-quote">&quot;zoom-in&quot;</span>,<span class="php-quote">&quot;zoom-out&quot;</span>,<span class="php-quote">&quot;off&quot;</span>,<span class="php-quote">&quot;signal&quot;</span>,<span class="php-quote">&quot;cog&quot;</span>,<span class="php-quote">&quot;trash&quot;</span>,<span class="php-quote">&quot;home&quot;</span>,<span class="php-quote">&quot;file&quot;</span>,<span class="php-quote">&quot;time&quot;</span>,<span class="php-quote">&quot;road&quot;</span>,<span class="php-quote">&quot;download-alt&quot;</span>,<span class="php-quote">&quot;download&quot;</span>,<span class="php-quote">&quot;upload&quot;</span>,<span class="php-quote">&quot;inbox&quot;</span>,<span class="php-quote">&quot;play-circle&quot;</span>,<span class="php-quote">&quot;repeat&quot;</span>,<span class="php-quote">&quot;refresh&quot;</span>,<span class="php-quote">&quot;list-alt&quot;</span>,<span class="php-quote">&quot;lock&quot;</span>,<span class="php-quote">&quot;flag&quot;</span>,<span class="php-quote">&quot;headphones&quot;</span>,<span class="php-quote">&quot;volume-off&quot;</span>,<span class="php-quote">&quot;volume-down&quot;</span>,<span class="php-quote">&quot;volume-up&quot;</span>,<span class="php-quote">&quot;qrcode&quot;</span>,<span class="php-quote">&quot;barcode&quot;</span>,<span class="php-quote">&quot;tag&quot;</span>,<span class="php-quote">&quot;tags&quot;</span>,<span class="php-quote">&quot;book&quot;</span>,<span class="php-quote">&quot;bookmark&quot;</span>,<span class="php-quote">&quot;print&quot;</span>,<span class="php-quote">&quot;camera&quot;</span>,<span class="php-quote">&quot;font&quot;</span>,<span class="php-quote">&quot;bold&quot;</span>,<span class="php-quote">&quot;italic&quot;</span>,<span class="php-quote">&quot;text-height&quot;</span>,<span class="php-quote">&quot;text-width&quot;</span>,<span class="php-quote">&quot;align-left&quot;</span>,<span class="php-quote">&quot;align-center&quot;</span>,<span class="php-quote">&quot;align-right&quot;</span>,<span class="php-quote">&quot;align-justify&quot;</span>,<span class="php-quote">&quot;list&quot;</span>,<span class="php-quote">&quot;indent-left&quot;</span>,<span class="php-quote">&quot;indent-right&quot;</span>,<span class="php-quote">&quot;facetime-video&quot;</span>,<span class="php-quote">&quot;picture&quot;</span>,<span class="php-quote">&quot;map-marker&quot;</span>,<span class="php-quote">&quot;adjust&quot;</span>,<span class="php-quote">&quot;tint&quot;</span>,<span class="php-quote">&quot;edit&quot;</span>,<span class="php-quote">&quot;share&quot;</span>,<span class="php-quote">&quot;check&quot;</span>,<span class="php-quote">&quot;move&quot;</span>,<span class="php-quote">&quot;step-backward&quot;</span>,<span class="php-quote">&quot;fast-backward&quot;</span>,<span class="php-quote">&quot;backward&quot;</span>,<span class="php-quote">&quot;play&quot;</span>,<span class="php-quote">&quot;pause&quot;</span>,<span class="php-quote">&quot;stop&quot;</span>,<span class="php-quote">&quot;forward&quot;</span>,<span class="php-quote">&quot;fast-forward&quot;</span>,<span class="php-quote">&quot;step-forward&quot;</span>,<span class="php-quote">&quot;eject&quot;</span>,<span class="php-quote">&quot;chevron-left&quot;</span>,<span class="php-quote">&quot;chevron-right&quot;</span>,<span class="php-quote">&quot;plus-sign&quot;</span>,<span class="php-quote">&quot;minus-sign&quot;</span>,<span class="php-quote">&quot;remove-sign&quot;</span>,<span class="php-quote">&quot;ok-sign&quot;</span>,<span class="php-quote">&quot;question-sign&quot;</span>,<span class="php-quote">&quot;info-sign&quot;</span>,<span class="php-quote">&quot;screenshot&quot;</span>,<span class="php-quote">&quot;remove-circle&quot;</span>,<span class="php-quote">&quot;ok-circle&quot;</span>,<span class="php-quote">&quot;ban-circle&quot;</span>,<span class="php-quote">&quot;arrow-left&quot;</span>,<span class="php-quote">&quot;arrow-right&quot;</span>,<span class="php-quote">&quot;arrow-up&quot;</span>,<span class="php-quote">&quot;arrow-down&quot;</span>,<span class="php-quote">&quot;share-alt&quot;</span>,<span class="php-quote">&quot;resize-full&quot;</span>,<span class="php-quote">&quot;resize-small&quot;</span>,<span class="php-quote">&quot;exclamation-sign&quot;</span>,<span class="php-quote">&quot;gift&quot;</span>,<span class="php-quote">&quot;leaf&quot;</span>,<span class="php-quote">&quot;fire&quot;</span>,<span class="php-quote">&quot;eye-open&quot;</span>,<span class="php-quote">&quot;eye-close&quot;</span>,<span class="php-quote">&quot;warning-sign&quot;</span>,<span class="php-quote">&quot;plane&quot;</span>,<span class="php-quote">&quot;calendar&quot;</span>,<span class="php-quote">&quot;random&quot;</span>,<span class="php-quote">&quot;comment&quot;</span>,<span class="php-quote">&quot;magnet&quot;</span>,<span class="php-quote">&quot;chevron-up&quot;</span>,<span class="php-quote">&quot;chevron-down&quot;</span>,<span class="php-quote">&quot;retweet&quot;</span>,<span class="php-quote">&quot;shopping-cart&quot;</span>,<span class="php-quote">&quot;folder-close&quot;</span>,<span class="php-quote">&quot;folder-open&quot;</span>,<span class="php-quote">&quot;resize-vertical&quot;</span>,<span class="php-quote">&quot;resize-horizontal&quot;</span>,<span class="php-quote">&quot;hdd&quot;</span>,<span class="php-quote">&quot;bullhorn&quot;</span>,<span class="php-quote">&quot;bell&quot;</span>,<span class="php-quote">&quot;certificate&quot;</span>,<span class="php-quote">&quot;thumbs-up&quot;</span>,<span class="php-quote">&quot;thumbs-down&quot;</span>,<span class="php-quote">&quot;hand-right&quot;</span>,<span class="php-quote">&quot;hand-left&quot;</span>,<span class="php-quote">&quot;hand-up&quot;</span>,<span class="php-quote">&quot;hand-down&quot;</span>,<span class="php-quote">&quot;circle-arrow-right&quot;</span>,<span class="php-quote">&quot;circle-arrow-left&quot;</span>,<span class="php-quote">&quot;circle-arrow-up&quot;</span>,<span class="php-quote">&quot;circle-arrow-down&quot;</span>,<span class="php-quote">&quot;globe&quot;</span>,<span class="php-quote">&quot;wrench&quot;</span>,<span class="php-quote">&quot;tasks&quot;</span>,<span class="php-quote">&quot;filter&quot;</span>,<span class="php-quote">&quot;briefcase&quot;</span>,<span class="php-quote">&quot;fullscreen&quot;</span>,<span class="php-quote">&quot;dashboard&quot;</span>,<span class="php-quote">&quot;paperclip&quot;</span>,<span class="php-quote">&quot;heart-empty&quot;</span>,<span class="php-quote">&quot;link&quot;</span>,<span class="php-quote">&quot;phone&quot;</span>,<span class="php-quote">&quot;pushpin&quot;</span>,<span class="php-quote">&quot;usd&quot;</span>,<span class="php-quote">&quot;gbp&quot;</span>,<span class="php-quote">&quot;sort&quot;</span>,<span class="php-quote">&quot;sort-by-alphabet&quot;</span>,<span class="php-quote">&quot;sort-by-alphabet-alt&quot;</span>,<span class="php-quote">&quot;sort-by-order&quot;</span>,<span class="php-quote">&quot;sort-by-order-alt&quot;</span>,<span class="php-quote">&quot;sort-by-attributes&quot;</span>,<span class="php-quote">&quot;sort-by-attributes-alt&quot;</span>,<span class="php-quote">&quot;unchecked&quot;</span>,<span class="php-quote">&quot;expand&quot;</span>,<span class="php-quote">&quot;collapse-down&quot;</span>,<span class="php-quote">&quot;collapse-up&quot;</span>,<span class="php-quote">&quot;log-in&quot;</span>,<span class="php-quote">&quot;flash&quot;</span>,<span class="php-quote">&quot;log-out&quot;</span>,<span class="php-quote">&quot;new-window&quot;</span>,<span class="php-quote">&quot;record&quot;</span>,<span class="php-quote">&quot;save&quot;</span>,<span class="php-quote">&quot;open&quot;</span>,<span class="php-quote">&quot;saved&quot;</span>,<span class="php-quote">&quot;import&quot;</span>,<span class="php-quote">&quot;export&quot;</span>,<span class="php-quote">&quot;send&quot;</span>,<span class="php-quote">&quot;floppy-disk&quot;</span>,<span class="php-quote">&quot;floppy-saved&quot;</span>,<span class="php-quote">&quot;floppy-remove&quot;</span>,<span class="php-quote">&quot;floppy-save&quot;</span>,<span class="php-quote">&quot;floppy-open&quot;</span>,<span class="php-quote">&quot;credit-card&quot;</span>,<span class="php-quote">&quot;transfer&quot;</span>,<span class="php-quote">&quot;cutlery&quot;</span>,<span class="php-quote">&quot;header&quot;</span>,<span class="php-quote">&quot;compressed&quot;</span>,<span class="php-quote">&quot;earphone&quot;</span>,<span class="php-quote">&quot;phone-alt&quot;</span>,<span class="php-quote">&quot;tower&quot;</span>,<span class="php-quote">&quot;stats&quot;</span>,<span class="php-quote">&quot;sd-video&quot;</span>,<span class="php-quote">&quot;hd-video&quot;</span>,<span class="php-quote">&quot;subtitles&quot;</span>,<span class="php-quote">&quot;sound-stereo&quot;</span>,<span class="php-quote">&quot;sound-dolby&quot;</span>,<span class="php-quote">&quot;sound-5-1&quot;</span>,<span class="php-quote">&quot;sound-6-1&quot;</span>,<span class="php-quote">&quot;sound-7-1&quot;</span>,<span class="php-quote">&quot;copyright-mark&quot;</span>,<span class="php-quote">&quot;registration-mark&quot;</span>,<span class="php-quote">&quot;cloud-download&quot;</span>,<span class="php-quote">&quot;cloud-upload&quot;</span>,<span class="php-quote">&quot;tree-conifer&quot;</span>,<span class="php-quote">&quot;tree-deciduous&quot;</span>,<span class="php-quote">&quot;cd&quot;</span>,<span class="php-quote">&quot;save-file&quot;</span>,<span class="php-quote">&quot;open-file&quot;</span>,<span class="php-quote">&quot;level-up&quot;</span>,<span class="php-quote">&quot;copy&quot;</span>,<span class="php-quote">&quot;paste&quot;</span>,<span class="php-quote">&quot;alert&quot;</span>,<span class="php-quote">&quot;equalizer&quot;</span>,<span class="php-quote">&quot;king&quot;</span>,<span class="php-quote">&quot;queen&quot;</span>,<span class="php-quote">&quot;pawn&quot;</span>,<span class="php-quote">&quot;bishop&quot;</span>,<span class="php-quote">&quot;knight&quot;</span>,<span class="php-quote">&quot;baby-formula&quot;</span>,<span class="php-quote">&quot;tent&quot;</span>,<span class="php-quote">&quot;blackboard&quot;</span>,<span class="php-quote">&quot;bed&quot;</span>,<span class="php-quote">&quot;apple&quot;</span>,<span class="php-quote">&quot;erase&quot;</span>,<span class="php-quote">&quot;hourglass&quot;</span>,<span class="php-quote">&quot;lamp&quot;</span>,<span class="php-quote">&quot;duplicate&quot;</span>,<span class="php-quote">&quot;piggy-bank&quot;</span>,<span class="php-quote">&quot;scissors&quot;</span>,<span class="php-quote">&quot;bitcoin&quot;</span>,<span class="php-quote">&quot;yen&quot;</span>,<span class="php-quote">&quot;ruble&quot;</span>,<span class="php-quote">&quot;scale&quot;</span>,<span class="php-quote">&quot;ice-lolly&quot;</span>,<span class="php-quote">&quot;ice-lolly-tasted&quot;</span>,<span class="php-quote">&quot;education&quot;</span>,<span class="php-quote">&quot;option-horizontal&quot;</span>,<span class="php-quote">&quot;option-vertical&quot;</span>,<span class="php-quote">&quot;menu-hamburger&quot;</span>,<span class="php-quote">&quot;modal-window&quot;</span>,<span class="php-quote">&quot;oil&quot;</span>,<span class="php-quote">&quot;grain&quot;</span>,<span class="php-quote">&quot;sunglasses&quot;</span>,<span class="php-quote">&quot;text-size&quot;</span>,<span class="php-quote">&quot;text-color&quot;</span>,<span class="php-quote">&quot;text-background&quot;</span>,<span class="php-quote">&quot;object-align-top&quot;</span>,<span class="php-quote">&quot;object-align-bottom&quot;</span>,<span class="php-quote">&quot;object-align-horizontal&quot;</span>,<span class="php-quote">&quot;object-align-left&quot;</span>,<span class="php-quote">&quot;object-align-vertical&quot;</span>,<span class="php-quote">&quot;object-align-right&quot;</span>,<span class="php-quote">&quot;triangle-right&quot;</span>,<span class="php-quote">&quot;triangle-left&quot;</span>,<span class="php-quote">&quot;triangle-bottom&quot;</span>,<span class="php-quote">&quot;triangle-top&quot;</span>,<span class="php-quote">&quot;console&quot;</span>,<span class="php-quote">&quot;superscript&quot;</span>,<span class="php-quote">&quot;subscript&quot;</span>,<span class="php-quote">&quot;menu-left&quot;</span>,<span class="php-quote">&quot;menu-right&quot;</span>,<span class="php-quote">&quot;menu-down&quot;</span>,<span class="php-quote">&quot;menu-up&quot;</span>);;
+</span><span id="20" class="l"><a href="#20">20 </a>        <span class="php-var">$list</span>=Gui::select(<span class="php-var">$icons</span>,<span class="php-var">$object</span>-&gt;getIcon(),<span class="php-quote">&quot;Sélectionner une icône...&quot;</span>);
+</span><span id="21" class="l"><a href="#21">21 </a>        <span class="php-var">$this</span>-&gt;loadView(<span class="php-quote">&quot;statut/vAdd&quot;</span>,<span class="php-keyword1">array</span>(<span class="php-quote">&quot;select&quot;</span>=&gt;<span class="php-var">$list</span>,<span class="php-quote">&quot;statut&quot;</span>=&gt;<span class="php-var">$object</span>));
+</span><span id="22" class="l"><a href="#22">22 </a>    }
+</span><span id="23" class="l"><a href="#23">23 </a>}</span></code></pre>
+	</div>
+
+	<div id="footer">
+		Micro-Framework &amp; HelpDesk API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js?5d40adb661dfc25a2e2df78800723b328fa019d9"></script>
+<script src="elementlist.js?8013e0ed62ac39ac7afa47a5b3dc16ce6bad0215"></script>
+</body>
+</html>
