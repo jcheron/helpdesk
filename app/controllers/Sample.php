@@ -26,6 +26,7 @@ class Sample extends \_DefaultController {
 		Jquery::startCondition("$('#nb').val()==$('#res').val()","$('.alert-danger').show();");
 		Jquery::doJqueryOn("#btClose", "click", "#response", "html","",Jquery::_doJquery("#main", "show"));
 		Jquery::doJquery("#main", "hide");
+
 		echo Jquery::compile();
 	}
 
