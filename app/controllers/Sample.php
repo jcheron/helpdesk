@@ -3,6 +3,7 @@ use micro\orm\DAO;
 use micro\js\Jquery;
 use micro\utils\StrUtils;
 use micro\views\Gui;
+use micro\utils\RequestUtils;
 class Sample extends \_DefaultController {
 	public function ajaxSample(){
 		echo $this->messageInfo("Cocher la case pour désactiver un utilisateur.<br>Cliquer sur une ligne pour modifier l'utilisateur associé.".
@@ -34,5 +35,33 @@ class Sample extends \_DefaultController {
 		$nb=sizeof(@$_POST["user"]);
 		echo "<input type='hidden' id='res' value='".$nb."'>";
 		echo Gui::pluriel("Utilisateur désactivé", "Utilisateurs désactivés", $nb);
+	}
+	public function liste(){
+		$faqs=DAO::getAll("Faq");
+		echo "<ul class='list-group'>";
+		foreach ($faqs as $faq){
+			echo "<li class='list-group-item' id='".$faq->getId()."'>".$faq."</li>";
+		}
+		echo "</ul>";
+		echo Jquery::getOn("click", ".list-group-item", "sample/frmTitre","#responseFaq");
+	}
+	
+	public function frmTitre($params){
+		$faq=DAO::getOne("Faq", $params[0]);
+		$this->loadView("faq/vUpdateTitre",array("faq"=>$faq));
+		echo Jquery::postFormOn("click", "#btUpdateTitre", "sample/updateTitre", "frmTitre", "#responseFaq");
+	}
+	
+	public function updateTitre(){
+		if(RequestUtils::isPost()){
+			$faq=DAO::getOne("Faq", $_POST["id"]);
+			$faq->setTitre($_POST["titre"]);
+			if(DAO::update($faq)){
+				$this->messageInfo($faq." modifié","5000");
+				Jquery::get("sample/liste","#liste");
+				Jquery::doJquery(".alert", "hide","3000");
+				echo Jquery::compile();
+			}
+		}
 	}
 }
