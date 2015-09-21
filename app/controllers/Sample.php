@@ -24,9 +24,9 @@ class Sample extends \_DefaultController {
 		Jquery::doJqueryOn(".list-group-item", "mouseenter", "this", "addClass",array("active"));
 		Jquery::doJqueryOn(".list-group-item", "mouseout", "this", "removeClass","active");
 		Jquery::startCondition("$('#nb').val()==$('#res').val()","$('.alert-danger').show();");
-		Jquery::doJqueryOn("#btClose", "click", "#response", "html","");
-		Jquery::doJqueryOn("#btClose", "click", "#main", "show");
+		Jquery::doJqueryOn("#btClose", "click", "#response", "html","",Jquery::_doJquery("#main", "show"));
 		Jquery::doJquery("#main", "hide");
+
 		echo Jquery::compile();
 	}
 
