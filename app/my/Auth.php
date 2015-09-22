@@ -15,7 +15,11 @@ class Auth {
 		$user=null;
 		if(array_key_exists("user", $_SESSION))
 			$user=$_SESSION["user"];
+		
 		return $user;
+		
+		
+		
 	}
 
 	/**
@@ -24,6 +28,17 @@ class Auth {
 	 */
 	public static function isAuth(){
 		return null!==self::getUser();
+		
+		if(isset($user)){
+			
+			$_SESSION["user"]=DAO::getOne("User", "admin=0");
+			
+			
+			
+			
+	
+		
+		}
 	}
 
 	/**
@@ -39,6 +54,7 @@ class Auth {
 			return false;
 		}
 	}
+	
 
 	/**
 	 * Retourne la zone d'information au format HTML affichant l'utilisateur connecté<br>

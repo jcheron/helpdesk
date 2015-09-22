@@ -32,7 +32,7 @@
 					<li id='mainNav-navzone-1-li-2'><a id='mainNav-navzone-1-link-2'
 						href="Tickets">Tickets</a></li>
 					<li id='mainNav-navzone-1-li-3'><a id='mainNav-navzone-1-link-3'
-						href="#">Foire aux questions</a></li>
+						href="faqs">Foire aux questions</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->

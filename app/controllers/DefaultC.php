@@ -38,7 +38,9 @@ class DefaultC extends BaseController {
 		$_SESSION["user"]=DAO::getOne("User", "admin=1");
 		$_SESSION['KCFINDER'] = array(
 				'disabled' => false
+				
 		);
+		
 		$this->index();
 	}
 
