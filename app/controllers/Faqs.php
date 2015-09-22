@@ -33,17 +33,22 @@ class Faqs extends \_DefaultController {
 		echo $ArticleMax;
 	}
 	
-	public function index($message=null){
+	public function index($message=null,$orderBy=""){
 		global $config;
 		$baseHref=get_class($this);
 		if(isset($message)){
 			if(is_string($message)){
 				$message=new DisplayedMessage($message);
+			}elseif (is_array($message)){
+				$message=new DisplayedMessage($message[0]);
 			}
 			$message->setTimerInterval($this->messageTimerInterval);
 			$this->_showDisplayedMessage($message);
 		}
-		$objects=DAO::getAll($this->model);
+		if($orderBy!=""){
+			$orderBy="1=1 order by ".$orderBy;
+		}
+		$objects=DAO::getAll($this->model,$orderBy);
 		echo "<table class='table table-striped'>";
 		echo "<thead>";
 			echo "<tr>";
@@ -54,7 +59,7 @@ class Faqs extends \_DefaultController {
 						echo "Trier par... <span class='caret'></span>";
 					echo "</button>";
 					echo "<ul class='dropdown-menu' role='menu'>";
-						echo "<li>Par categorie</li>";
+						echo "<li><a href='Faqs'>Par categorie</a></li>";
 					echo "</ul>";
 				echo "</div>";
 				echo "</th>";
@@ -104,6 +109,10 @@ class Faqs extends \_DefaultController {
 	public function frm2($id = NULL) {
 		$faq = $this->getInstance($id);
 		$this->loadView("faq/vReadElent", array("faq"=>$faq));
+	}
+	
+	public function trier(){
+		
 	}
 	
 	
