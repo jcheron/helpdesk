@@ -70,8 +70,20 @@ class Faqs extends \_DefaultController {
 	 */
 	public function frm($id = NULL) {
 		
+		if (Auth::isAdmin()){
 		$faq = $this->getInstance($id);
-		$this->loadView("faq/vUpdateTitre",array("faq"=>$faq));
+			if (isset($id)){
+				$ajou_modif = "Modifier";
+				$this->loadView("faq/vUpdateTitre",array("faq"=>$faq, "ajou_modif"=>$ajou_modif));
+			}
+			else {
+				$ajou_modif = "Ajouter";
+				$this->loadView("faq/vUpdateTitre",array("faq"=>$faq, "ajou_modif"=>$ajou_modif));
+			}
+		}
+		else {
+			echo "Vous devez vous connecter en tant qu'administrateur pour accéder à ce module";
+		}
 	}
 	
 	
