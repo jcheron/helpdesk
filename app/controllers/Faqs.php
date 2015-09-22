@@ -48,6 +48,16 @@ class Faqs extends \_DefaultController {
 		echo "<thead>";
 			echo "<tr>";
 				echo "<th>".$this->model."</th>";
+				echo "<th>";
+				echo "<div class='btn-group'>";
+					echo "<button type='button' class='btn btn-primary dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>";
+						echo "Trier par... <span class='caret'></span>";
+					echo "</button>";
+					echo "<ul class='dropdown-menu' role='menu'>";
+						echo "<li>Par categorie</li>";
+					echo "</ul>";
+				echo "</div>";
+				echo "</th>";
 			echo "</tr>";
 		echo "</thead>";
 		echo "<tbody>";
@@ -95,6 +105,7 @@ class Faqs extends \_DefaultController {
 		$faq = $this->getInstance($id);
 		$this->loadView("faq/vReadElent", array("faq"=>$faq));
 	}
+	
 	
 	
 	
