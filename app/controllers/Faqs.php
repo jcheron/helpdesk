@@ -35,25 +35,49 @@ class Faqs extends \_DefaultController {
 		echo $ArticleMax;
 	}
 	
+
 	// **************************************************************************************** //
 	
-	public function index($message=null){
+
+
+	public function index($message=null,$orderBy=""){
+
 		global $config;
 		$baseHref=get_class($this);
 		if(isset($message)){
 			if(is_string($message)){
 				$message=new DisplayedMessage($message);
+			}elseif (is_array($message)){
+				$message=new DisplayedMessage($message[0]);
 			}
 			$message->setTimerInterval($this->messageTimerInterval);
 			$this->_showDisplayedMessage($message);
 		}
-		$objects=DAO::getAll($this->model);
+		if($orderBy!=""){
+			$orderBy="1=1 order by ".$orderBy;
+		}
+		$objects=DAO::getAll($this->model,$orderBy);
 		echo "<table class='table table-striped'>";
-		echo "<thead><tr><th>".$this->model."</th></tr></thead>";
+		echo "<thead>";
+			echo "<tr>";
+				echo "<th>".$this->model."</th>";
+				echo "<th>";
+				echo "<div class='btn-group'>";
+					echo "<button type='button' class='btn btn-primary dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>";
+						echo "Trier par... <span class='caret'></span>";
+					echo "</button>";
+					echo "<ul class='dropdown-menu' role='menu'>";
+						echo "<li><a href='Faqs'>Par categorie</a></li>";
+					echo "</ul>";
+				echo "</div>";
+				echo "</th>";
+			echo "</tr>";
+		echo "</thead>";
 		echo "<tbody>";
 		foreach ($objects as $object){
 			echo "<tr>";
-			echo "<td>".$object->toString()."</td>";
+			echo "<td class='titre-faq'><a href='".$baseHref."/frm2/".$object->getId()."' style='color:#253939'><b>".$object->getTitre()."</b> - ".$object->getUser()."</a></td>";
+			echo "<td class='td-center'><a class='btn btn-success btn-xs' href='".$baseHref."/frm2/".$object->getId()."'><span class='glyphicon glyphicon-eye-open' aria-hidden='true'></span></a></td>";
 			if (Auth::isAdmin()){
 				echo "<td class='td-center'><a class='btn btn-primary btn-xs' href='".$baseHref."/frm/".$object->getId()."'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a></td>".
 				"<td class='td-center'><a class='btn btn-warning btn-xs' href='".$baseHref."/delete/".$object->getId()."'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></td>";
@@ -102,4 +126,17 @@ class Faqs extends \_DefaultController {
 		}
 		echo Jquery::execute("CKEDITOR.replace( 'description');");
 	}
+
+	
+	public function frm2($id = NULL) {
+		$faq = $this->getInstance($id);
+		$this->loadView("faq/vReadElent", array("faq"=>$faq));
+	}
+	
+	public function trier(){
+		
+	}
+	
+	
+
 }
