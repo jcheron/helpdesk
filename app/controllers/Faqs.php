@@ -77,22 +77,19 @@ class Faqs extends \_DefaultController {
 		echo "<tbody>";
 		$currentOrder="";
 		$func="getCategorie";
-		if (sizeof($params)>1) {
-			switch ($params[1]){
-				case "idCategorie":
-					$func="getCategorie";
-					break;
-				case "dateCreation":
-					$func="getDateCreation";
-					break;
-			}
+		switch ($params[1]){
+			case "idCategorie":
+				$func="getCategorie";
+				break;
+			case "dateCreation":
+				$func="getDateCreation";
+				break;
 		}
-			foreach ($objects as $object){
-				if($currentOrder!=$object->$func().""){
-					echo "<tr><td colspan='3'><h2>".$object->$func()."</h2></td></tr>";
-					$currentOrder=$object->$func()."";
+		foreach ($objects as $object){
+			if($currentOrder!=$object->$func().""){
+				echo "<tr><td colspan='3'><h2>".$object->$func()."</h2></td></tr>";
+				$currentOrder=$object->$func()."";
 			}
-		
 			echo "<tr>";
 			echo "<td class='titre-faq'><a href='".$baseHref."/frm2/".$object->getId()."' style='color:#253939'><b>".$object->getTitre()."</b> - ".$object->getUser()."</a></td>";
 			echo "<td class='td-center'><a class='btn btn-success btn-xs' href='".$baseHref."/frm2/".$object->getId()."'><span class='glyphicon glyphicon-eye-open' aria-hidden='true'></span></a></td>";
