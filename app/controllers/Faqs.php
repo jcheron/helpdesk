@@ -35,26 +35,36 @@ class Faqs extends \_DefaultController {
 		echo $ArticleMax;
 	}
 	
+<<<<<<< HEAD
 
 	// **************************************************************************************** //
 	
 
 
 	public function index($message=null,$orderBy=""){
+=======
+	public function index($params=null){
+>>>>>>> origin/master
 		global $config;
+		$orderBy="";
 		$baseHref=get_class($this);
-		if(isset($message)){
-			if(is_string($message)){
-				$message=new DisplayedMessage($message);
-			}elseif (is_array($message)){
-				$message=new DisplayedMessage($message[0]);
+		if(isset($params)){
+			if(is_string($params)){
+				$message=new DisplayedMessage($params);
+			}elseif (is_array($params)){
+				if(sizeof($params)>1)
+					$orderBy="1=1 order by ".$params[1];
+				else
+					$message=new DisplayedMessage($params[0]);
+
 			}
-			$message->setTimerInterval($this->messageTimerInterval);
-			$this->_showDisplayedMessage($message);
+			if(isset($message)){
+				$message->setTimerInterval($this->messageTimerInterval);
+				$this->_showDisplayedMessage($message);
+			}
 		}
-		if($orderBy!=""){
-			$orderBy="1=1 order by ".$orderBy;
-		}
+		
+		
 		$objects=DAO::getAll($this->model,$orderBy);
 		echo "<table class='table table-striped'>";
 		echo "<thead>";
