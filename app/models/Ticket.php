@@ -139,5 +139,24 @@ class Ticket extends Base{
 		return $this;
 	}
 
+	
+	public function modifierTicket($id = NULL) {
+	
+		if (Auth::isAdmin()){
+			$statut = $this->getInstance($id);
+			if (isset($id)){
+				$ajou_modif = "Modifier";
+				$this->loadView("tickets/update",array("faq"=>$faq, "ajou_modif"=>$ajou_modif));
+			}
+			else {
+				$ajou_modif = "Ajouter";
+				$this->loadView("faq/vUpdateTitre",array("faq"=>$faq, "ajou_modif"=>$ajou_modif));
+			}
+		}
+		else {
+			echo "Vous devez vous connecter en tant qu'administrateur pour accéder à ce module";
+		}
+	}
+	
 
 }

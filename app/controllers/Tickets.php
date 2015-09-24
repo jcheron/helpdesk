@@ -36,10 +36,13 @@ class Tickets extends \_DefaultController {
 		}
 	}
 
+		
 	public function frm($id=NULL){
 		$ticket=$this->getInstance($id);
 		$categories=DAO::getAll("Categorie");
 		$statut=DAO::getAll("Statut");
+		
+		
 		if($ticket->getCategorie()==null ){
 			$cat=-1;
 			
@@ -47,20 +50,28 @@ class Tickets extends \_DefaultController {
 			$cat=$ticket->getCategorie()->getId();
 			
 		}
-		$listStatut=Gui::select(array("Nouveau","Attribué","En attente", "Résolu", "Clos")
-				,$ticket->getStatut(),"Sélectionner un statut ...");
+		
 		$listCat=Gui::select($categories,$cat,"Sélectionner une catégorie ...");
 		$listType=Gui::select(array("demande","intervention"),$ticket->getType(),"Sélectionner un type ...");
-		$this->loadView("ticket/vAdd",array("ticket"=>$ticket,"listCat"=>$listCat,"listType"=>$listType, "listStatut"=>$listStatut));
-		
-		echo Jquery::execute("CKEDITOR.replace( 'description');");
-		
-		/* 	
-		elseif ()
+		if (Auth::isAdmin() == false){
 			
-			$listStatut=Gui::select(array("Nouveau","Attribu�","En attente", "R�solu", "Clos"),$ticket->getStatut(),"Sélectionner un statut ...");
-			$this->loadView("ticket/vAdd",array("ticket"=>$ticket,"listCat"=>$listCat,"listType"=>$listType, "listStatut"=>$listStatut));
-			echo Jquery::execute("CKEDITOR.replace( 'description');"); */
+			
+			//$selectclass = '<select disabled class="form-control" name="idStatut"> '.statutNow.'</select>';
+			$this->loadView("ticket/vAdd",array("ticket"=>$ticket,"listCat"=>$listCat,"listType"=>$listType));
+			echo Jquery::execute("CKEDITOR.replace( 'description');");
+			
+		}
+			
+		if (Auth::isAdmin()){
+			
+			$listStatut=Gui::select(array("Nouveau","Attribué","En attente", "Résolu", "Clos"),$ticket->getStatut(),"Sélectionner un statut ...");
+			$selectclass='<select enable class="form-control" name="idStatut">'.$listStatut.'</select>';
+			
+			$this->loadView("ticket/vAdd",array("ticket"=>$ticket,"listCat"=>$listCat,"listType"=>$listType, "listStatut"=>$listStatut, "selectclass"=>$selectclass));
+			echo Jquery::execute("CKEDITOR.replace( 'description');"); 
+			
+		}
+			
 	}
 
 	/* (non-PHPdoc)
@@ -70,7 +81,6 @@ class Tickets extends \_DefaultController {
 		parent::setValuesToObject($object);
 		$categorie=DAO::getOne("Categorie", $_POST["idCategorie"]);
 		$object->setCategorie($categorie);
-		
 		$statut=DAO::getOne("Statut", $_POST["idStatut"]);
 		$object->setStatut($statut);
 		$user=DAO::getOne("User", $_POST["idUser"]);
