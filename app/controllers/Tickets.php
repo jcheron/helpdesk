@@ -36,19 +36,42 @@ class Tickets extends \_DefaultController {
 		}
 	}
 
+		
 	public function frm($id=NULL){
 		$ticket=$this->getInstance($id);
 		$categories=DAO::getAll("Categorie");
-		if($ticket->getCategorie()==null){
+		$statut=DAO::getAll("Statut");
+		
+		
+		if($ticket->getCategorie()==null ){
 			$cat=-1;
+			
 		}else{
 			$cat=$ticket->getCategorie()->getId();
+			
 		}
+		
 		$listCat=Gui::select($categories,$cat,"Sélectionner une catégorie ...");
 		$listType=Gui::select(array("demande","intervention"),$ticket->getType(),"Sélectionner un type ...");
-
-		$this->loadView("ticket/vAdd",array("ticket"=>$ticket,"listCat"=>$listCat,"listType"=>$listType));
-		echo Jquery::execute("CKEDITOR.replace( 'description');");
+		if (Auth::isAdmin() == false){
+			
+			
+			//$selectclass = '<select disabled class="form-control" name="idStatut"> '.statutNow.'</select>';
+			$this->loadView("ticket/vAdd",array("ticket"=>$ticket,"listCat"=>$listCat,"listType"=>$listType));
+			echo Jquery::execute("CKEDITOR.replace( 'description');");
+			
+		}
+			
+		if (Auth::isAdmin()){
+			
+			$listStatut=Gui::select(array("Nouveau","Attribué","En attente", "Résolu", "Clos"),$ticket->getStatut(),"Sélectionner un statut ...");
+			$selectclass='<select enable class="form-control" name="idStatut">'.$listStatut.'</select>';
+			
+			$this->loadView("ticket/vAdd",array("ticket"=>$ticket,"listCat"=>$listCat,"listType"=>$listType, "listStatut"=>$listStatut, "selectclass"=>$selectclass));
+			echo Jquery::execute("CKEDITOR.replace( 'description');"); 
+			
+		}
+			
 	}
 
 	/* (non-PHPdoc)
@@ -72,7 +95,7 @@ class Tickets extends \_DefaultController {
 		if(null==$obj->getType())
 			$obj->setType("intervention");
 		if($obj->getStatut()===NULL){
-			$statut=DAO::getOne("Statut", 1);
+			$statut=DAO::getOne("Statut", 3);
 			$obj->setStatut($statut);
 		}
 		if($obj->getUser()===NULL){

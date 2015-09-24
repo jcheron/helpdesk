@@ -22,8 +22,34 @@
 	<textarea name="description" id="description" placeholder="Entrez la description" class="form-control"><?php echo $ticket->getDescription()?></textarea>
 </div>
 <div class="form-group">
+<input type="hidden" name="id" value="<?php echo $ticket->getId()?>">
 	<label>Statut</label>
-	<div class="form-control" disabled><?php echo $ticket->getStatut()?></div>
+	<div>
+	
+	
+
+<?php 
+if (Auth::isAdmin() == false){
+		echo '<div class="form-control" disabled name="idStatut">';
+		
+	 echo $ticket->getStatut();
+		
+		echo'</div>';
+}
+
+else{
+	
+	echo $selectclass;
+}
+
+?>
+		
+
+	 
+	</div>
+	<!-- <select class="form-control" name="idStatut"> -->
+	
+	
 	<label>Emetteur</label>
 	<div class="form-control" disabled><?php echo $ticket->getUser()?></div>
 	<label for="dateCreation">Date de création</label>
