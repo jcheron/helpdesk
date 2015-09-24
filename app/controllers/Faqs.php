@@ -56,7 +56,8 @@ class Faqs extends \_DefaultController {
 				else
 					$message=new DisplayedMessage($params[0]);
 
-			}
+			}else 
+				$message=$params;
 			if(isset($message)){
 				$message->setTimerInterval($this->messageTimerInterval);
 				$this->_showDisplayedMessage($message);
