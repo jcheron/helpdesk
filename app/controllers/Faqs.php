@@ -1,5 +1,7 @@
 <?php
 use micro\orm\DAO;
+use micro\views\Gui;
+use micro\js\Jquery;
 /**
  * Gestion des articles de la Faq
  * @author jcheron
@@ -90,6 +92,7 @@ class Faqs extends \_DefaultController {
 		}
 	}
 	
+	// **************************************************************************************** //
 	
 	/* (non-PHPdoc)
 	 * @see _DefaultController::frm()
@@ -98,19 +101,32 @@ class Faqs extends \_DefaultController {
 		
 		if (Auth::isAdmin()){
 		$faq = $this->getInstance($id);
+		
+		
+		$categories=DAO::getAll("Categorie");
+		if($faq->getCategorie()==null){
+			$cat=-1;
+		}else{
+			$cat=$faq->getCategorie()->getId();
+		}
+		
+		$listCat=Gui::select($categories,$cat,"Sélectionner une catégorie ...");
+		
 			if (isset($id)){
 				$ajou_modif = "Modifier";
-				$this->loadView("faq/vUpdateTitre",array("faq"=>$faq, "ajou_modif"=>$ajou_modif));
+				$this->loadView("faq/vUpdateTitre",array("faq"=>$faq, "ajou_modif"=>$ajou_modif, "idCategorie"=>$cat, "listCat"=>$listCat));
 			}
 			else {
 				$ajou_modif = "Ajouter";
-				$this->loadView("faq/vUpdateTitre",array("faq"=>$faq, "ajou_modif"=>$ajou_modif));
+				$this->loadView("faq/vUpdateTitre",array("faq"=>$faq, "ajou_modif"=>$ajou_modif, "idCategorie"=>$cat, "listCat"=>$listCat));
 			}
 		}
 		else {
 			echo "Vous devez vous connecter en tant qu'administrateur pour accéder à ce module";
 		}
+		echo Jquery::execute("CKEDITOR.replace( 'description');");
 	}
+
 	
 	public function frm2($id = NULL) {
 		$faq = $this->getInstance($id);
@@ -122,7 +138,5 @@ class Faqs extends \_DefaultController {
 	}
 	
 	
-	
-	
-	
+
 }
