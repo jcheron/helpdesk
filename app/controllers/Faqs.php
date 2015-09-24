@@ -67,14 +67,32 @@ class Faqs extends \_DefaultController {
 						echo "Trier par... <span class='caret'></span>";
 					echo "</button>";
 					echo "<ul class='dropdown-menu' role='menu'>";
-						echo "<li><a href='Faqs'>Par categorie</a></li>";
+						echo "<li><a href='Faqs/index/mess/idCategorie'>categorie</a></li>";
+						echo "<li><a href='Faqs/index/mess/dateCreation'>date de creation</a></li>";
 					echo "</ul>";
 				echo "</div>";
 				echo "</th>";
 			echo "</tr>";
 		echo "</thead>";
 		echo "<tbody>";
-		foreach ($objects as $object){
+		$currentOrder="";
+		$func="getCategorie";
+		if (sizeof($params)>1) {
+			switch ($params[1]){
+				case "idCategorie":
+					$func="getCategorie";
+					break;
+				case "dateCreation":
+					$func="getDateCreation";
+					break;
+			}
+		}
+			foreach ($objects as $object){
+				if($currentOrder!=$object->$func().""){
+					echo "<tr><td colspan='3'><h2>".$object->$func()."</h2></td></tr>";
+					$currentOrder=$object->$func()."";
+			}
+		
 			echo "<tr>";
 			echo "<td class='titre-faq'><a href='".$baseHref."/frm2/".$object->getId()."' style='color:#253939'><b>".$object->getTitre()."</b> - ".$object->getUser()."</a></td>";
 			echo "<td class='td-center'><a class='btn btn-success btn-xs' href='".$baseHref."/frm2/".$object->getId()."'><span class='glyphicon glyphicon-eye-open' aria-hidden='true'></span></a></td>";
