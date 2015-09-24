@@ -35,16 +35,15 @@ class Faqs extends \_DefaultController {
 		echo $ArticleMax;
 	}
 	
-<<<<<<< HEAD
+
 
 	// **************************************************************************************** //
 	
 
 
-	public function index($message=null,$orderBy=""){
-=======
+
 	public function index($params=null){
->>>>>>> origin/master
+
 		global $config;
 		$orderBy="";
 		$baseHref=get_class($this);
