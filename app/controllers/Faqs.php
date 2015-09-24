@@ -41,7 +41,6 @@ class Faqs extends \_DefaultController {
 
 
 	public function index($message=null,$orderBy=""){
-
 		global $config;
 		$baseHref=get_class($this);
 		if(isset($message)){
@@ -74,16 +73,41 @@ class Faqs extends \_DefaultController {
 			echo "</tr>";
 		echo "</thead>";
 		echo "<tbody>";
-		foreach ($objects as $object){
-			echo "<tr>";
-			echo "<td class='titre-faq'><a href='".$baseHref."/frm2/".$object->getId()."' style='color:#253939'><b>".$object->getTitre()."</b> - ".$object->getUser()."</a></td>";
-			echo "<td class='td-center'><a class='btn btn-success btn-xs' href='".$baseHref."/frm2/".$object->getId()."'><span class='glyphicon glyphicon-eye-open' aria-hidden='true'></span></a></td>";
-			if (Auth::isAdmin()){
-				echo "<td class='td-center'><a class='btn btn-primary btn-xs' href='".$baseHref."/frm/".$object->getId()."'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a></td>".
-				"<td class='td-center'><a class='btn btn-warning btn-xs' href='".$baseHref."/delete/".$object->getId()."'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></td>";
+		
+		if (Auth::isAdmin()){
+			foreach ($objects as $object){
+				
+				echo "<tr>";
+				echo "<td class='titre-faq'><a href='".$baseHref."/frm2/".$object->getId()."' style='color:#253939'><b>".$object->getTitre()."</b> - ".$object->getUser()."</a></td>";
+				echo "<td class='td-center'><a class='btn btn-success btn-xs' href='".$baseHref."/frm2/".$object->getId()."'><span class='glyphicon glyphicon-eye-open' aria-hidden='true'></span></a></td>";
+					
+				if (Auth::getUser()==$object->getUser()){
+					echo "<td class='td-center'><a class='btn btn-primary btn-xs' href='".$baseHref."/frm/".$object->getId()."'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a></td>";
+					if ($object->getDisable()=="0"){
+						echo "<td class='td-center'><a class='btn btn-warning btn-xs' href='".$baseHref."/disable/".$object->getId()."'><span class='glyphicon glyphicon-pause' aria-hidden='true'></span></a></td>";
+					}
+					else {
+						echo "<td class='td-center'><a class='btn btn-info btn-xs' href='".$baseHref."/activate/".$object->getId()."'><span class='glyphicon glyphicon-play' aria-hidden='true'></span></a></td>";
+					}
+					echo "<td class='td-center'><a class='btn btn-danger btn-xs' href='".$baseHref."/delete/".$object->getId()."'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></td>";
+				}
 			}
 			echo "</tr>";
 		}
+		else {
+			foreach ($objects as $object){
+				if ($object->getDisable()=="0"){
+					
+					echo "<tr>";
+					echo "<td class='titre-faq'><a href='".$baseHref."/frm2/".$object->getId()."' style='color:#253939'><b>".$object->getTitre()."</b> - ".$object->getUser()."</a></td>";
+					echo "<td class='td-center'><a class='btn btn-success btn-xs' href='".$baseHref."/frm2/".$object->getId()."'><span class='glyphicon glyphicon-eye-open' aria-hidden='true'></span></a></td>";
+				}
+			}
+			echo "</tr>";
+		}
+		
+		
+		
 		echo "</tbody>";
 		echo "</table>";
 		
@@ -124,7 +148,7 @@ class Faqs extends \_DefaultController {
 		else {
 			echo "Vous devez vous connecter en tant qu'administrateur pour accéder à ce module";
 		}
-		echo Jquery::execute("CKEDITOR.replace( 'description');");
+		echo Jquery::execute("CKEDITOR.replace( 'contenu');");
 	}
 
 	
@@ -133,8 +157,36 @@ class Faqs extends \_DefaultController {
 		$this->loadView("faq/vReadElent", array("faq"=>$faq));
 	}
 	
-	public function trier(){
-		
+	public function disable($id = NULL){
+		try{
+			$object=DAO::getOne($this->model, $id[0]);
+			if($object!==NULL){
+				$object->setDisable("1");
+				DAO::update($object);
+				$msg=new DisplayedMessage("Article désactivé");
+			}else{
+				$msg=new DisplayedMessage($this->model." introuvable","warning");
+			}
+		}catch(Exception $e){
+			$msg=new DisplayedMessage("Impossible de désactiver l'instance de ".$this->model,"danger");
+		}
+		$this->forward(get_class($this),"index",$msg);
+	}
+	
+	public function activate($id = NULL){
+		try{
+			$object=DAO::getOne($this->model, $id[0]);
+			if($object!==NULL){
+				$object->setDisable("0");
+				DAO::update($object);
+				$msg=new DisplayedMessage("Article activé");
+			}else{
+				$msg=new DisplayedMessage($this->model." introuvable","warning");
+			}
+		}catch(Exception $e){
+			$msg=new DisplayedMessage("Impossible d'activer l'instance de ".$this->model,"danger");
+		}
+		$this->forward(get_class($this),"index",$msg);
 	}
 	
 	

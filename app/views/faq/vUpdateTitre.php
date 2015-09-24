@@ -6,7 +6,7 @@
 		<input type="hidden" id="id" name="id" value="<?=$faq->getId()?>">
 		<input type="text" class="form-control" id="titre" name="titre" value="<?=$faq->getTitre()?>">
 		<br>
-		<textarea name="contenu" id="descrption" placeholder="Entrez la question" class="form-control"><?php echo $faq->getContenu()?></textarea>
+		<textarea name="contenu" id="contenu" placeholder="Entrez la question" class="form-control"><?php echo $faq->getContenu()?></textarea>
 		<br>
 		<select class="form-control" name="idCategorie"><?php echo $listCat;?></select>
 	</div>
