@@ -104,14 +104,14 @@ class _DefaultController extends BaseController {
 				try{
 					DAO::update($object);
 					$msg=new DisplayedMessage($this->model." `{$object->toString()}` mis à jour");
-				}catch(Exception $e){
+				}catch(\Exception $e){
 					$msg=new DisplayedMessage("Impossible de modifier l'instance de ".$this->model,"danger");
 				}
 			}else{
 				try{
 					DAO::insert($object);
 					$msg=new DisplayedMessage("Instance de ".$this->model." `{$object->toString()}` ajoutée");
-				}catch(Exception $e){
+				}catch(\Exception $e){
 					$msg=new DisplayedMessage("Impossible d'ajouter l'instance de ".$this->model,"danger");
 				}
 			}
@@ -132,7 +132,7 @@ class _DefaultController extends BaseController {
 			}else{
 				$msg=new DisplayedMessage($this->model." introuvable","warning");
 			}
-		}catch(Exception $e){
+		}catch(\Exception $e){
 			$msg=new DisplayedMessage("Impossible de supprimer l'instance de ".$this->model,"danger");
 		}
 		$this->forward(get_class($this),"index",$msg);

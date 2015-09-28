@@ -1,5 +1,5 @@
 <?php
-require_once 'micro/log/chromePhp.php';
+require_once ROOT.DS.'micro/log/chromePhp.php';
 
 class Logger{
 	public static function init(){
