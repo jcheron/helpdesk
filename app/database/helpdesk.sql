@@ -28,8 +28,8 @@ USE `helpdesk`;
 -- Structure de la table `categorie`
 --
 
-DROP TABLE IF EXISTS `categorie`;
-CREATE TABLE IF NOT EXISTS `categorie` (
+DROP TABLE IF EXISTS `Categorie`;
+CREATE TABLE IF NOT EXISTS `Categorie` (
 `id` int(11) NOT NULL,
   `libelle` varchar(100) NOT NULL,
   `idCategorie` int(11) DEFAULT NULL
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `categorie` (
 -- Contenu de la table `categorie`
 --
 
-INSERT INTO `categorie` (`id`, `libelle`, `idCategorie`) VALUES
+INSERT INTO `Categorie` (`id`, `libelle`, `idCategorie`) VALUES
 (1, 'Réseau', NULL),
 (2, 'Routage', 1),
 (3, 'Serveurs', 1),
@@ -131,8 +131,8 @@ INSERT INTO `statut` (`id`, `libelle`, `ordre`, `icon`) VALUES
 -- Structure de la table `ticket`
 --
 
-DROP TABLE IF EXISTS `ticket`;
-CREATE TABLE IF NOT EXISTS `ticket` (
+DROP TABLE IF EXISTS `Ticket`;
+CREATE TABLE IF NOT EXISTS `Ticket` (
 `id` int(11) NOT NULL,
   `type` set('demande','incident') NOT NULL DEFAULT 'demande',
   `idCategorie` int(11) NOT NULL,
@@ -147,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `ticket` (
 -- Contenu de la table `ticket`
 --
 
-INSERT INTO `ticket` (`id`, `type`, `idCategorie`, `titre`, `description`, `idStatut`, `idUser`, `dateCreation`) VALUES
+INSERT INTO `Ticket` (`id`, `type`, `idCategorie`, `titre`, `description`, `idStatut`, `idUser`, `dateCreation`) VALUES
 (1, 'incident', 8, 'Ecran bleu', 'Ecran bleu sur ouverture session windows', 2, 2, '2015-05-10 16:27:29'),
 (2, 'incident', 12, 'impossible de se connecter', 'Impossible de se connecter à mon compte :\r\nLe message affiché est "Les informations de compte n''ont pas permis votre authentification".\r\n\r\nJe n''ai pas trouvé la procédure de récupération de mot de passe.', 1, 3, '2015-05-14 10:40:40');
 
