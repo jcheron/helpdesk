@@ -13,8 +13,6 @@ before_script:
  - "wget http://selenium-release.storage.googleapis.com/2.45/selenium-server-standalone-2.45.0.jar"
  - "java -jar selenium-server-standalone-2.45.0.jar > /dev/null &"
  - sleep 5
- - cd public
  - php -S 127.0.0.1:8090 app/.htrouter.php &
  - sleep 5
- - cd ..
 script: (cd tests; phpunit --configuration PHPunit.xml --debug)
