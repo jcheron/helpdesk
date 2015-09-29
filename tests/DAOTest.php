@@ -15,8 +15,18 @@ class DAOTest extends \PHPUnit_Framework_TestCase{
 		DAO::connect($db["dbName"],@$db["serverName"],@$db["port"],@$db["user"],@$db["password"]);
 	}
 
-	public function testLoadOne(){
-		$ticket=DAO::getOne("Ticket", 1);
-		$this->assertNotNull($ticket);
+	private function loadOne($className){
+		$objects=DAO::getAll($className);
+		$this->assertArrayHasKey(0, $objects);
+		$this->assertNotNull($objects[0]);
+		$o=DAO::getOne($className, $objects[0]->getId());
+		$this->assertNotNull($o);
+		$this->assertEquals($objects[0]->getId(), $o->getId());
+	}
+	public function testLoadModels(){
+		$models=["Ticket","Faq","Message","Statut","User","Categorie"];
+		foreach ($models as $model){
+			$this->loadOne($model);
+		}
 	}
 }
