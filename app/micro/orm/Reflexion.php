@@ -1,16 +1,16 @@
 <?php
 namespace micro\orm;
-require_once 'micro/addendum/annotations.php';
+require_once ROOT.DS.'micro/addendum/annotations.php';
 
-require_once 'micro/annotations/Column.php';
-require_once 'micro/annotations/Transient.php';
-require_once 'micro/annotations/Table.php';
-require_once 'micro/annotations/Id.php';
-require_once 'micro/annotations/ManyToOne.php';
-require_once 'micro/annotations/JoinColumn.php';
-require_once 'micro/annotations/OneToMany.php';
-require_once 'micro/annotations/ManyToMany.php';
-require_once 'micro/annotations/JoinTable.php';
+require_once ROOT.DS.'micro/annotations/Column.php';
+require_once ROOT.DS.'micro/annotations/Transient.php';
+require_once ROOT.DS.'micro/annotations/Table.php';
+require_once ROOT.DS.'micro/annotations/Id.php';
+require_once ROOT.DS.'micro/annotations/ManyToOne.php';
+require_once ROOT.DS.'micro/annotations/JoinColumn.php';
+require_once ROOT.DS.'micro/annotations/OneToMany.php';
+require_once ROOT.DS.'micro/annotations/ManyToMany.php';
+require_once ROOT.DS.'micro/annotations/JoinTable.php';
 
 
 /**

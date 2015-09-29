@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 <?php
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', dirname(__FILE__).DS);
-$config=include_once ROOT.'config.php';
+$config=include_once ROOT.DS.'config.php';
 
 require_once ROOT.'micro/log/Logger.php';
 require_once ROOT.'micro/controllers/Autoloader.php';
@@ -24,6 +24,9 @@ class Startup{
 		global $config;
 		session_start();
 		Logger::init();
+		if($config["test"]){
+			$config["siteUrl"]="http://127.0.0.1:8090/";
+		}
 		extract($config["database"]);
 		$db=$config["database"];
 		DAO::connect($db["dbName"],@$db["serverName"],@$db["port"],@$db["user"],@$db["password"]);

@@ -46,8 +46,10 @@ class Autoloader{
 				}
 			}
 			$class = implode(DS, $nameSpace);
-			if(strstr($class,"micro".DS)===false)
+			if(strstr($class,"micro".DS)===false){
+				if(file_exists($class.'.php'))
 				require $class.'.php';
+			}
 			else
 				require ROOT.DS.$class.'.php';
 		}

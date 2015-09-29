@@ -1,9 +1,15 @@
 <?php
 
+use micro\controllers\Autoloader;
 ini_set('display_errors',1);
 error_reporting(E_ALL);
+define('DS', DIRECTORY_SEPARATOR);
+define('ROOT', dirname(__FILE__).DS."../app/");
+$config=include_once ROOT.DS.'config.php';
 
-include __DIR__ . "/../startup.php";
+require_once ROOT.'micro/log/Logger.php';
+require_once ROOT.'micro/controllers/Autoloader.php';
+Autoloader::register();
 
 // required for phalcon/incubator
 include __DIR__ . "/../vendor/autoload.php";
