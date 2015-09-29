@@ -6,6 +6,7 @@ php:
 addons:
   firefox: "33.0"
 before_script:
+ - mysql < app/database/helpdesk.sql -uroot
  - wget http://getcomposer.org/composer.phar
  - php composer.phar install
  - "sh -e /etc/init.d/xvfb start"
