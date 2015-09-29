@@ -1,6 +1,6 @@
 ![HelpDesk](http://angular.kobject.net/git/phalconist/helpdesk.png "HelpDesk")
 # helpdesk
-https://travis-ci.org/jcheron/helpdesk.svg?branch=tests
+![Travis-ci tests](https://travis-ci.org/jcheron/helpdesk.svg?branch=tests "Travis-ci")
 A Helpdesk Application for educational purposes using a micro-framework
 # Howto
 
