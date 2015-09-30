@@ -10,7 +10,7 @@
          processIsolation="false"
          stopOnFailure="false"
          syntaxCheck="true">
-    <testsuite name="phalcon-jquery - Testsuite">
+    <testsuite name="Helpdesk - Testsuite">
         <directory>./</directory>
     </testsuite>
 </phpunit>
