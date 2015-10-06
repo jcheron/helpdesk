@@ -86,4 +86,24 @@ abstract class AjaxUnitTest extends UnitTestCase {
     public function assertPageContainsText($text){
     	$this->assertContains($text, self::$webDriver->getPageSource());
     }
+
+    /**
+     * Specify the amount of time the driver should wait when searching for an element if it is not immediately present.
+     * @param number $seconds specify the wait time in seconds
+     */
+    public function waitFor($seconds=5){
+    	self::$webDriver->manage()->timeouts()->implicitlyWait($seconds);
+    }
+
+    /**
+     * Simulate typing ENTER into an element
+     * @param RemoteWebElement $remoteWebElement the element or the element Id
+     */
+    public function sendEnter($remoteWebElement){
+    	if($remoteWebElement instanceof RemoteWebElement)
+    		$remoteWebElement->sendKeys("\xEE\x80\x87");
+    	elseif(is_string($remoteWebElement)){
+    		$this->sendEnter($this->getElementById($remoteWebElement));
+    	}
+    }
 }
