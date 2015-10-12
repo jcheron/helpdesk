@@ -10,4 +10,10 @@ class HomeTest extends AjaxUnitTest {
 		$this->assertPageContainsText('HelpDesk');
 		$this->assertTrue($this->elementExists("#response"));
 	}
+	public function testAjax(){
+		$this->waitFor(5);
+		$btAjax=$this->getElementBySelector(".btAjax");
+		$btAjax->click();
+		$this->assertNotNull($this->getElementById("btClose"));
+	}
 }
