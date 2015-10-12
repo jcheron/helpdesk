@@ -19,8 +19,8 @@ class DefaultC extends BaseController {
 		$this->loadView("main/vHeader",array("infoUser"=>Auth::getInfoUser()));
 		$this->loadView("main/vDefault");
 		$this->loadView("main/vFooter");
-		Jquery::getOn("click", ".btAjax", "sample/ajaxSample","#response");
-		Jquery::get("http://127.0.0.1:8090/sample/ajaxSample","#response");
+		Jquery::getOn("click", ".btAjax", "Sample/ajaxSample","#response");
+		Jquery::get("Sample/ajaxSample","#response");
 		
 		echo Jquery::compile();
 	}

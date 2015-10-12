@@ -42,6 +42,7 @@ class Jquery {
 	}
 
 	private static function addScript($code){
+		$code="$( document ).ready(function() {\n".$code."}\n);";
 		return preg_filter("/(\<script[^>]*?\>)?(.*)(\<\/script\>)?/si", "<script>$2 </script>\n", $code,1);
 	}
 
