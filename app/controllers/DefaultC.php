@@ -20,8 +20,6 @@ class DefaultC extends BaseController {
 		$this->loadView("main/vDefault");
 		$this->loadView("main/vFooter");
 		Jquery::getOn("click", ".btAjax", "Sample/ajaxSample","#response");
-		Jquery::get("Sample/ajaxSample","#response");
-		
 		echo Jquery::compile();
 	}
 
