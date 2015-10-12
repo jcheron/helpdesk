@@ -14,6 +14,7 @@ class HomeTest extends AjaxUnitTest {
 		$this->waitFor(5);
 		$btAjax=$this->getElementBySelector(".btAjax");
 		$btAjax->click();
+		$this->waitForElementPresent(function(){ return $this->elementExists("#btClose");});
 		$this->assertNotNull($this->getElementById("btClose"));
 	}
 }

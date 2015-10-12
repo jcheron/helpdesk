@@ -95,6 +95,10 @@ abstract class AjaxUnitTest extends UnitTestCase {
     	self::$webDriver->manage()->timeouts()->implicitlyWait($seconds);
     }
 
+    public function waitForElementPresent($condition){
+    	 $wait = new WebDriverWait(self::$webDriver);
+    	$wait->until($condition);
+    }
     /**
      * Simulate typing ENTER into an element
      * @param RemoteWebElement $remoteWebElement the element or the element Id
