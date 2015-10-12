@@ -95,8 +95,8 @@ abstract class AjaxUnitTest extends UnitTestCase {
     	self::$webDriver->manage()->timeouts()->implicitlyWait($seconds);
     }
 
-    public function waitForElementPresent($condition){
-    	 $wait = new WebDriverWait(self::$webDriver);
+    public function waitForElementPresent($condition,$time=5000){
+    	 $wait = new WebDriverWait(self::$webDriver,$time);
     	$wait->until($condition);
     }
     /**
