@@ -1,1 +1,1 @@
-php -S 127.0.0.1:8090 app/.htrouter.php
+php -S 127.0.0.1:8090 .htrouter.php

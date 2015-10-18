@@ -14,12 +14,12 @@ class UserAuth extends BaseController {
 	}
 
 	function hybridauth_endpoint() {
-		include "./../vendor/hybridauth/hybridauth/hybridauth/index.php";
+		include ROOT."./../vendor/hybridauth/hybridauth/hybridauth/index.php";
 	}
 
 	function signin_with_hybridauth($provider) {
-		$authConfig="./hybridauth/config.php";
-		include "./../vendor/hybridauth/hybridauth/hybridauth/Hybrid/Auth.php";
+		$authConfig=ROOT."./hybridauth/config.php";
+		include ROOT."./../vendor/hybridauth/hybridauth/hybridauth/Hybrid/Auth.php";
 
 		$hybridauth=new Hybrid_Auth($authConfig);
 		$adapter=$hybridauth->authenticate($provider[0]);
