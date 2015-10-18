@@ -4,7 +4,6 @@ AddDefaultCharset UTF-8
 	RewriteEngine On
 	RewriteBase /helpdesk/
 	
-	RewriteCond %{REQUEST_URI} !.*(opauth).*$
 	RewriteCond %{REQUEST_FILENAME} !-f  
 	RewriteCond %{HTTP_ACCEPT} !(.*images.*)
 	RewriteRule ^(.*)$ app/startup.php?c=$1 [L,QSA]

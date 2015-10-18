@@ -14,7 +14,6 @@ require_once ROOT.'micro/controllers/Autoloader.php';
 require_once ROOT.'./../vendor/autoload.php';
 
 Autoloader::register();
-$siteUrl="";
 $ctrl=new Startup();
 $ctrl->run();
 
@@ -22,13 +21,11 @@ class Startup{
 	private $urlParts;
 	public function run(){
 		set_error_handler(array($this, 'errorHandler'));
-		global $config;
-		$siteUrl=$config["siteUrl"];
+		$config=$GLOBALS["config"];
 		session_start();
 		Logger::init();
 		if($config["test"]){
 			$config["siteUrl"]="http://127.0.0.1:8090/";
-			$siteUrl=$config["siteUrl"];
 		}
 		extract($config["database"]);
 		$db=$config["database"];
@@ -92,6 +89,7 @@ class Startup{
 		if($finalize)
 			$obj->finalize();
 	}
+
 	public function errorHandler($severity, $message, $filename, $lineno) {
 		if (error_reporting() == 0) {
 			return;
