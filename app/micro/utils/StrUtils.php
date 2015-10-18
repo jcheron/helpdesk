@@ -23,4 +23,4 @@ class StrUtils {
 		return $ret;
 	}
 }
-?>
+

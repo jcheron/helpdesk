@@ -444,4 +444,3 @@ class ChromePhp
         return $this->_settings[$key];
     }
 }
-?>

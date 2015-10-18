@@ -38,7 +38,7 @@ class _DefaultController extends BaseController {
 		}
 		$objects=DAO::getAll($this->model);
 		echo "<table class='table table-striped'>";
-		echo "<thead><tr><th>".$this->model."</th></tr></thead>";
+		echo "<thead><tr><th colspan='3'>".$this->model."</th></tr></thead>";
 		echo "<tbody>";
 		foreach ($objects as $object){
 			echo "<tr>";

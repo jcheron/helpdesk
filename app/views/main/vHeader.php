@@ -44,7 +44,7 @@
 			<div class="header">
 				<h1>HelpDesk</h1>
 				<p>Assistance, support et gestion des incidents.</p>
-				<div class="pull-right">
+				<div class="pull-right" id="divInfoUser">
 					<?php
 					echo $infoUser;
 					?>

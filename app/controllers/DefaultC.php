@@ -57,6 +57,10 @@ class DefaultC extends BaseController {
 	 * Déconnecte l'utilisateur actuel
 	 */
 	public function disconnect(){
+		if(array_key_exists("autoConnect", $_COOKIE)){
+			unset($_COOKIE['autoConnect']);
+			setcookie("autoConnect", "", time()-3600,"/");
+		}
 		$_SESSION = array();
 		$_SESSION['KCFINDER'] = array(
 				'disabled' => true
@@ -91,5 +95,8 @@ class DefaultC extends BaseController {
 		Jquery::doJqueryOn("#btClose", "click", "#main", "show");
 		Jquery::doJquery("#main", "hide");
 		echo Jquery::compile();
+	}
+	public function getInfoUser(){
+		echo Auth::getInfoUser();
 	}
 }

@@ -57,6 +57,9 @@ class Auth {
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="defaultC/asAdmin"><span class="glyphicon glyphicon-king" aria-hidden="true"></span>&nbsp;Administrateur</a></li>
 								<li><a href="defaultC/asUser"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;Utilisateur</a></li>
+								<li><a href="userauth/signin_with_hybridauth/GitHub"><span class="pe-so-github" aria-hidden="true"></span>&nbsp;Utilisateur GitHub</a></li>
+								<li><a href="userauth/signin_with_hybridauth/Google"><span class="pe-so-google-plus" aria-hidden="true"></span>&nbsp;Utilisateur Google</a></li>
+
 							</ul>
 						</div>';
 		}

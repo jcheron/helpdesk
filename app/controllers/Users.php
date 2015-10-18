@@ -15,7 +15,11 @@ class Users extends \_DefaultController {
 
 	public function frm($id=NULL){
 		$user=$this->getInstance($id);
-		$this->loadView("user/vAdd",array("user"=>$user));
+		$disabled="";
+		if($user->getAuthProvider()!=null){
+			$disabled="disabled";
+		}
+		$this->loadView("user/vAdd",array("user"=>$user,"disabled"=>$disabled));
 	}
 
 	/* (non-PHPdoc)
