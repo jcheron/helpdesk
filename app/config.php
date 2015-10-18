@@ -22,5 +22,6 @@ return array(
 			}
 		},
 		"directories"=>["my","tests"],
-		"test"=>false
+		"templateEngine"=>'micro\views\engine\Twig',
+		"test"=>true
 );

@@ -47,7 +47,7 @@ class Tickets extends \_DefaultController {
 		$listCat=Gui::select($categories,$cat,"Sélectionner une catégorie ...");
 		$listType=Gui::select(array("demande","intervention"),$ticket->getType(),"Sélectionner un type ...");
 
-		$this->loadView("ticket/vAdd",array("ticket"=>$ticket,"listCat"=>$listCat,"listType"=>$listType));
+		$this->loadView("ticket/vAdd.html",array("ticket"=>$ticket,"listCat"=>$listCat,"listType"=>$listType));
 		echo Jquery::execute("CKEDITOR.replace( 'description');");
 	}
 

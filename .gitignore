@@ -49,3 +49,4 @@ Temporary Items
 .settings/org.eclipse.wst.jsdt.ui.superType.name
 .project
 app/hybridauth/config.php
+app/views/cache

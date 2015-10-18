@@ -1,4 +1,4 @@
-<form method="post" action="users/update">
+<form method="post" action="Users/update">
 <fieldset>
 <legend>Ajouter/modifier un utilisateur</legend>
 <div class="alert alert-info">Utilisateur : <?php echo $user->toString()?></div>

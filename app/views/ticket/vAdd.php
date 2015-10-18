@@ -1,4 +1,4 @@
-<form method="post" action="tickets/update">
+<form method="post" action="Tickets/update">
 <fieldset>
 <legend>Ajouter/modifier un ticket</legend>
 <div class="form-group">

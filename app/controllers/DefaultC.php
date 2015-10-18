@@ -16,9 +16,9 @@ class DefaultC extends BaseController {
 	 * @see BaseController::index()
 	 */
 	public function index() {
-		$this->loadView("main/vHeader",array("infoUser"=>Auth::getInfoUser()));
-		$this->loadView("main/vDefault");
-		$this->loadView("main/vFooter");
+		$this->loadView("main/vHeader.html",array("infoUser"=>Auth::getInfoUser()));
+		$this->loadView("main/vDefault.html");
+		$this->loadView("main/vFooter.html");
 		Jquery::getOn("click", ".btAjax", "Sample/ajaxSample","#response");
 		echo Jquery::compile();
 	}
@@ -27,9 +27,9 @@ class DefaultC extends BaseController {
 	 * Affiche la page de test
 	 */
 	public function test() {
-		$this->loadView("main/vHeader",array("infoUser"=>Auth::getInfoUser()));
+		$this->loadView("main/vHeader.html",array("infoUser"=>Auth::getInfoUser()));
 		$this->loadView("main/vTest");
-		$this->loadView("main/vFooter");
+		$this->loadView("main/vFooter.html");
 	}
 	/**
 	 * Connecte le premier administrateur trouvé dans la BDD
@@ -87,7 +87,7 @@ class DefaultC extends BaseController {
 		echo "</ul>";
 		echo "<button id='btClose' class='btn btn-primary'>Fermer</button>";
 		Jquery::bindMethods(true,false);
-		Jquery::getOn("click", ".list-group-item", "users/frm","#response");
+		Jquery::getOn("click", ".list-group-item", "Users/frm","#response");
 		Jquery::doJqueryOn(".ck", "click", "$(event.target).parent()", "toggleClass",array("disabled","$(event.target).prop('checked')"));
 		Jquery::doJqueryOn(".list-group-item", "mouseenter", "this", "addClass",array("active"));
 		Jquery::doJqueryOn(".list-group-item", "mouseout", "this", "removeClass","active");

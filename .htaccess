@@ -6,5 +6,5 @@ AddDefaultCharset UTF-8
 	
 	RewriteCond %{REQUEST_FILENAME} !-f  
 	RewriteCond %{HTTP_ACCEPT} !(.*images.*)
-	RewriteRule ^(.*)$ app/startup.php?c=$1 [L,QSA]
+	RewriteRule ^(.*)$ index.php?c=$1 [L,QSA]
 </IfModule>

@@ -1,0 +1,18 @@
+<form method="post" action="Statuts/update">
+<fieldset>
+<legend>Ajouter/modifier un statut</legend>
+<div class="alert alert-info">Statut : {{statut.toString()|raw}}</div>
+<div class="form-group">
+	<input type="hidden" name="id" value="{{statut.getId()}}">
+	<input type="text" name="libelle" value="{{statut.getLibelle()}}" placeholder="Entrez un libelle" class="form-control">
+	<select class="form-control" name="icon">
+	{{select|raw}}
+	</select>
+		<input type="number" name="ordre" value="{{statut.getOrdre()}}" placeholder="Entrez un ordre" class="form-control">
+</div>
+<div class="form-group">
+	<input type="submit" value="Valider" class="btn btn-default">
+	<a class="btn btn-default" href="{{config["siteUrl"]}}statuts">Annuler</a>
+</div>
+</fieldset>
+</form>

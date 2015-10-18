@@ -1,4 +1,4 @@
-<form method="post" action="categories/update">
+<form method="post" action="Categories/update">
 <fieldset>
 <legend>Ajouter/modifier une catégorie</legend>
 <div class="alert alert-info">Catégorie : <?php echo $categorie->toString()?></div>
