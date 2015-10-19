@@ -44,7 +44,7 @@ class Database {
 			$this->pdoObject->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 			$this->pdoObject->exec("SET CHARACTER SET utf8");
 
-		} catch (PDOException $e) {
+		} catch (\PDOException $e) {
 			print "Error!: " . $e->getMessage() . "<br/>";
 			die();
 		}

@@ -38,7 +38,6 @@ class ManyToManyParser{
 			if(!is_null($annot->inversedBy))
 				$this->inversedBy=$annot->inversedBy;
 			$this->targetEntityClass=get_class(new $this->targetEntity());
-			$pk=OrmUtils::getFirstKey($this->targetEntityClass);
 
 			$annotJoinTable=Reflexion::getAnnotationMember($class, $member, "JoinTable");
 			$this->joinTable=$annotJoinTable->name;

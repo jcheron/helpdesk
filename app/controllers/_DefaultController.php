@@ -37,19 +37,7 @@ class _DefaultController extends BaseController {
 			$this->_showDisplayedMessage($message);
 		}
 		$objects=DAO::getAll($this->model);
-		echo "<table class='table table-striped'>";
-		echo "<thead><tr><th colspan='3'>".$this->model."</th></tr></thead>";
-		echo "<tbody>";
-		foreach ($objects as $object){
-			echo "<tr>";
-			echo "<td>".$object->toString()."</td>";
-			echo "<td class='td-center'><a class='btn btn-primary btn-xs' href='".$baseHref."/frm/".$object->getId()."'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a></td>".
-			"<td class='td-center'><a class='btn btn-warning btn-xs' href='".$baseHref."/delete/".$object->getId()."'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></td>";
-			echo "</tr>";
-		}
-		echo "</tbody>";
-		echo "</table>";
-		echo "<a class='btn btn-primary' href='".$config["siteUrl"].$baseHref."/frm'>Ajouter...</a>";
+		$this->loadView("main/vObjects.html",array("objects"=>$objects,"model"=>$this->model,"config"=>$config,"baseHref"=>$baseHref));
 	}
 
 	/**

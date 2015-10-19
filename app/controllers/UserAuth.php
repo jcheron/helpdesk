@@ -13,11 +13,11 @@ class UserAuth extends BaseController {
 
 	}
 
-	function hybridauth_endpoint() {
+	public function hybridauth_endpoint() {
 		include ROOT."./../vendor/hybridauth/hybridauth/hybridauth/index.php";
 	}
 
-	function signin_with_hybridauth($provider) {
+	public function signin_with_hybridauth($provider) {
 		$authConfig=ROOT."./hybridauth/config.php";
 		include ROOT."./../vendor/hybridauth/hybridauth/hybridauth/Hybrid/Auth.php";
 

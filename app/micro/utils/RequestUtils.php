@@ -48,4 +48,24 @@ class RequestUtils{
 	public static function isPost(){
 		return $_SERVER['REQUEST_METHOD']==='POST';
 	}
+
+	/**
+	 * Retourne la valeur de la variable $key passée par la méthode get ou $default si la variable $key n'existe pas
+	 * @param string $key
+	 * @param string $default valeur retournée par défaut
+	 * @return string
+	 */
+	public static function get($key, $default=NULL) {
+		return array_key_exists($key, $_GET) ? $_GET[$key] : $default;
+	}
+
+	/**
+	 * Retourne la valeur de la variable $key passée par la méthode post ou $default si la variable $key n'existe pas
+	 * @param string $key
+	 * @param string $default valeur retournée par défaut
+	 * @return string
+	 */
+	public static function post($key, $default=NULL) {
+		return array_key_exists($key, $_POST) ? $_POST[$key] : $default;
+	}
 }

@@ -235,7 +235,7 @@ class DAO {
 	/**
 	 * Retourne une instance de $className depuis la base de données, à  partir des valeurs $keyValues de la clé primaire
 	 * @param String $className nom de la classe du model à charger
-	 * @param Array,string $keyValues valeurs des clés primaires ou condition
+	 * @param Array|string $keyValues valeurs des clés primaires ou condition
 	 */
 	public static function getOne($className,$keyValues,$loadManyToOne=true){
 		if(!is_array($keyValues)){

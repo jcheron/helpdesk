@@ -22,6 +22,7 @@ class SessionUtils{
 			$array=array();
 		return $array;
 	}
+
 	public static function addOrRemoveValueFromArray($arrayKey,$value){
 		$array=SessionUtils::getArray($arrayKey);
 		$_SESSION[$arrayKey]=$array;
@@ -35,6 +36,7 @@ class SessionUtils{
 			return false;
 		}
 	}
+
 	public static function removeValueFromArray($arrayKey,$value){
 		$array=SessionUtils::getArray($arrayKey);
 		$_SESSION[$arrayKey]=$array;
@@ -46,6 +48,7 @@ class SessionUtils{
 		}
 		return false;
 	}
+
 	public static function checkBoolean($key){
 		$_SESSION[$key]=!SessionUtils::getBoolean($key);
 		return $_SESSION[$key];
@@ -57,5 +60,13 @@ class SessionUtils{
 			$ret=$_SESSION[$key];
 		}
 		return $ret;
+	}
+
+	public static function session($key, $default=NULL) {
+		return array_key_exists($key, $_SESSION) ? $_SESSION[$key] : $default;
+	}
+
+	public static function delete($key){
+		unset($_SESSION[$key]);
 	}
 }

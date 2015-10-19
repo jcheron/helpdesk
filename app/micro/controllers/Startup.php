@@ -16,7 +16,7 @@ class Startup{
 				if ($engine instanceof TemplateEngine)
 					$GLOBALS["config"]["templateEngine"]=$engine;
 			}
-		} catch (Exception $e) {
+		} catch (\Exception $e) {
 			echo $e->getTraceAsString();
 		}
 		session_start();
