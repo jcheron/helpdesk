@@ -22,7 +22,7 @@ class Startup{
 		session_start();
 		\Logger::init();
 		if($config["test"]){
-			$config["siteUrl"]="http://127.0.0.1:8090/";
+			$GLOBALS["config"]["siteUrl"]="http://127.0.0.1:8090/";
 		}
 		extract($config["database"]);
 		$db=$config["database"];
