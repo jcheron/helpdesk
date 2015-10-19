@@ -7,7 +7,7 @@ use micro\orm\DAO;
  * @package helpdesk.controllers
  */
 class Faqs extends \_DefaultController {
-	public function Faqs(){
+	public function __construct(){
 		parent::__construct();
 		$this->title="Foire aux questions";
 		$this->model="Faq";

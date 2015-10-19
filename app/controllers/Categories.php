@@ -9,7 +9,7 @@ use micro\views\Gui;
  */
 class Categories extends \_DefaultController {
 
-	public function Categories(){
+	public function __construct(){
 		parent::__construct();
 		$this->title="Catégories";
 		$this->model="Categorie";

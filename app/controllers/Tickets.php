@@ -9,7 +9,7 @@ use micro\views\Gui;
  * @package helpdesk.controllers
  */
 class Tickets extends \_DefaultController {
-	public function Tickets(){
+	public function __construct(){
 		parent::__construct();
 		$this->title="Tickets";
 		$this->model="Ticket";

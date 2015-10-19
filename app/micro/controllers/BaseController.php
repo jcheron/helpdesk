@@ -1,7 +1,6 @@
 <?php
 namespace micro\controllers;
 
-use micro\views\TemplateParser;
 use micro\views\engine\TemplateEngine;
 use micro\utils\StrUtils;
 /**
@@ -14,7 +13,7 @@ abstract class BaseController {
 	/**
 	 * action par défaut
 	 */
-	abstract function index();
+	public abstract function index();
 	/**
 	 * Constructeur<br>
 	 * Appelle automatiquement la méthode isValid() pour vérifier l'accès autorisé

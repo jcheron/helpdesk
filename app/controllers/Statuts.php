@@ -8,7 +8,7 @@ use micro\views\Gui;
  */
 class Statuts extends \_DefaultController {
 
-	public function Statuts(){
+	public function __construct(){
 		parent::__construct();
 		$this->title="Statuts";
 		$this->model="Statut";

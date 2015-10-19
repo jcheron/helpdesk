@@ -7,7 +7,7 @@
  */
 class Users extends \_DefaultController {
 
-	public function Users(){
+	public function __construct(){
 		parent::__construct();
 		$this->title="Utilisateurs";
 		$this->model="User";
